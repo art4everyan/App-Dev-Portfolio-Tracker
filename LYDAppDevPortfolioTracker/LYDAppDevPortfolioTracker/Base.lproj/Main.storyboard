@@ -115,8 +115,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79T-3V-PEG">
+                                <rect key="frame" x="100" y="476" width="65" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-PM-qrj">
+                                <rect key="frame" x="265" y="473" width="102" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3Bx-TM-3e1"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro &amp; Updates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-9i-Xk4">
+                                <rect key="frame" x="10" y="520" width="146" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mgv-Ek-3Os">
+                                <rect key="frame" x="10" y="564" width="394" height="298"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-io-ohp">
+                                <rect key="frame" x="100" y="268" width="214" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add Demo Image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jgF-Bf-bst">
-                                <rect key="frame" x="10" y="280" width="394" height="150"/>
+                                <rect key="frame" x="10" y="306" width="394" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="P7O-Ss-ZLU"/>
@@ -150,45 +183,21 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79T-3V-PEG">
-                                <rect key="frame" x="100" y="450" width="65" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-PM-qrj">
-                                <rect key="frame" x="265" y="447" width="102" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="3Bx-TM-3e1"/>
-                                </constraints>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro &amp; Updates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-9i-Xk4">
-                                <rect key="frame" x="10" y="494" width="146" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mgv-Ek-3Os">
-                                <rect key="frame" x="10" y="538" width="394" height="324"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6pZ-PM-qrj" firstAttribute="top" secondItem="jgF-Bf-bst" secondAttribute="bottom" constant="17" id="1R4-sM-Zxy"/>
-                            <constraint firstItem="jgF-Bf-bst" firstAttribute="top" secondItem="bhs-zH-bAd" secondAttribute="bottom" constant="20" id="1o7-EA-n6S"/>
+                            <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="AdU-io-ohp" secondAttribute="trailing" constant="100" id="1dq-TF-IXh"/>
                             <constraint firstItem="Y2h-G3-GNP" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="7dv-7W-2Uw"/>
                             <constraint firstItem="bhs-zH-bAd" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="7iP-Ly-f0L"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="bottom" secondItem="mgv-Ek-3Os" secondAttribute="bottom" id="7nH-mc-fQe"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="V8a-9i-Xk4" secondAttribute="trailing" constant="258" id="CBX-A6-1J1"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="jgF-Bf-bst" secondAttribute="trailing" constant="10" id="MnW-oC-3ZZ"/>
+                            <constraint firstItem="AdU-io-ohp" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="100" id="PZs-qJ-c9e"/>
                             <constraint firstItem="79T-3V-PEG" firstAttribute="top" secondItem="jgF-Bf-bst" secondAttribute="bottom" constant="20" id="TLg-Gx-bqw"/>
                             <constraint firstItem="jgF-Bf-bst" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="Tgi-hz-84o"/>
                             <constraint firstItem="V8a-9i-Xk4" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="U6n-4N-gRb"/>
+                            <constraint firstItem="jgF-Bf-bst" firstAttribute="top" secondItem="AdU-io-ohp" secondAttribute="bottom" constant="8" id="Ukr-3Y-nsi"/>
                             <constraint firstItem="79T-3V-PEG" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="100" id="V7M-p0-mk9"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="mgv-Ek-3Os" secondAttribute="trailing" constant="10" id="Wq3-AY-7gj"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="bhs-zH-bAd" secondAttribute="trailing" constant="10" id="aVH-Cc-SHe"/>
@@ -196,6 +205,7 @@
                             <constraint firstItem="7NJ-iU-zVl" firstAttribute="leading" secondItem="l9x-qY-SgI" secondAttribute="leading" id="bwZ-k0-tK2"/>
                             <constraint firstItem="mgv-Ek-3Os" firstAttribute="top" secondItem="V8a-9i-Xk4" secondAttribute="bottom" constant="20" id="dle-Xg-50N"/>
                             <constraint firstItem="Y2h-G3-GNP" firstAttribute="top" secondItem="r0i-2E-qh2" secondAttribute="bottom" constant="20" id="drR-0d-Dtm"/>
+                            <constraint firstItem="AdU-io-ohp" firstAttribute="top" secondItem="bhs-zH-bAd" secondAttribute="bottom" constant="8" id="eDy-xE-8iI"/>
                             <constraint firstItem="bhs-zH-bAd" firstAttribute="top" secondItem="Y2h-G3-GNP" secondAttribute="bottom" constant="20" id="fs9-hG-eQt"/>
                             <constraint firstItem="r0i-2E-qh2" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="gGk-uU-eIu"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="r0i-2E-qh2" secondAttribute="trailing" constant="10" id="ie7-bP-N1f"/>
