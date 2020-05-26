@@ -226,7 +226,7 @@
         <!--Settings-->
         <scene sceneID="cm3-5L-8wc">
             <objects>
-                <viewController id="j9N-nn-1ki" sceneMemberID="viewController">
+                <viewController id="j9N-nn-1ki" customClass="PersonInfoEditViewController" customModule="LYDAppDevPortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lrv-gd-Hzo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +236,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub Add:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TX9-xr-gbN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub Address:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TX9-xr-gbN">
                                 <rect key="frame" x="190" y="187" width="214" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -291,6 +291,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Settings" id="cam-cc-3wh">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="2cE-im-D9z"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="c1E-0r-ZMG"/>
                                     </navigationItem>
                                 </items>
@@ -330,6 +331,15 @@
                         <viewLayoutGuide key="safeArea" id="8sv-H1-rhy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="jXV-L3-RhH"/>
+                    <connections>
+                        <outlet property="edit" destination="2cE-im-D9z" id="Qf6-mV-out"/>
+                        <outlet property="github" destination="TX9-xr-gbN" id="Peu-GD-hTE"/>
+                        <outlet property="imageView" destination="5zD-Ge-mrs" id="68P-Um-VJh"/>
+                        <outlet property="introduction" destination="bzc-cu-3G7" id="8Z5-Pp-OrR"/>
+                        <outlet property="name" destination="8I0-yB-nqE" id="5Zt-tC-t6L"/>
+                        <outlet property="save" destination="c1E-0r-ZMG" id="qoQ-qw-cXh"/>
+                        <outlet property="tableView" destination="NDv-He-30J" id="TWB-hV-hd5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG6-SS-MIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -338,7 +348,7 @@
         <!--My Page-->
         <scene sceneID="eXM-9Z-Fen">
             <objects>
-                <viewController id="KxA-QD-ksT" sceneMemberID="viewController">
+                <viewController id="KxA-QD-ksT" customClass="PersonInfoViewController" customModule="LYDAppDevPortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7dR-R8-cDY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,6 +447,13 @@
                         <viewLayoutGuide key="safeArea" id="6Qj-3M-Bgo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Page" image="doc.text.fill" catalog="system" id="3at-mt-v1v"/>
+                    <connections>
+                        <outlet property="gitLabel" destination="IQD-qL-Fax" id="Fjp-2V-2QM"/>
+                        <outlet property="imageView" destination="c48-GP-y8a" id="gXL-wl-vtf"/>
+                        <outlet property="introTextField" destination="3Vg-lc-pHq" id="0ge-CK-zA3"/>
+                        <outlet property="nameLabel" destination="wJs-Tq-ZJg" id="bTX-Om-Ycb"/>
+                        <outlet property="tableView" destination="Oi1-Yw-z62" id="mmH-iQ-GEZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f90-9f-5e8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -453,8 +470,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="KxA-QD-ksT" kind="relationship" relationship="viewControllers" id="SYV-Ro-k3C"/>
-                        <segue destination="Z13-Zw-lUX" kind="relationship" relationship="viewControllers" id="Tdf-8t-Xw9"/>
                         <segue destination="j9N-nn-1ki" kind="relationship" relationship="viewControllers" id="Tsm-lA-Z5L"/>
+                        <segue destination="Z13-Zw-lUX" kind="relationship" relationship="viewControllers" id="Tdf-8t-Xw9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHs-8D-x4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
