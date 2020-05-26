@@ -11,7 +11,7 @@
         <!--All Projects-->
         <scene sceneID="dTp-Bo-7QX">
             <objects>
-                <viewController id="Z13-Zw-lUX" sceneMemberID="viewController">
+                <viewController id="Z13-Zw-lUX" customClass="ProjectsTableViewController" customModule="LYDAppDevPortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dMK-4S-nu9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="-604" y="719"/>
         </scene>
-        <!--View Controller-->
+        <!--Project View Controller-->
         <scene sceneID="SX1-cs-GBS">
             <objects>
-                <viewController id="peE-CN-Nj6" sceneMemberID="viewController">
+                <viewController id="peE-CN-Nj6" customClass="ProjectViewController" customModule="LYDAppDevPortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l9x-qY-SgI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,8 +95,16 @@
                                 </constraints>
                                 <items>
                                     <navigationItem id="XOc-0q-bXE">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="X7W-IZ-7Gn"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dLj-G1-aRn"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="X7W-IZ-7Gn">
+                                            <connections>
+                                                <action selector="editTapped:" destination="peE-CN-Nj6" id="63V-lN-W0J"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dLj-G1-aRn">
+                                            <connections>
+                                                <action selector="saveTapped:" destination="peE-CN-Nj6" id="TKc-Lt-NdS"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -135,8 +143,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mgv-Ek-3Os">
                                 <rect key="frame" x="10" y="564" width="394" height="298"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -147,6 +154,9 @@
                                 <state key="normal" title="Add Demo Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTapped:" destination="peE-CN-Nj6" eventType="touchUpInside" id="1rF-6B-M2F"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jgF-Bf-bst">
                                 <rect key="frame" x="10" y="306" width="394" height="150"/>
@@ -218,6 +228,17 @@
                         <viewLayoutGuide key="safeArea" id="Ve3-H4-t9B"/>
                     </view>
                     <navigationItem key="navigationItem" id="m4G-oP-Fld"/>
+                    <connections>
+                        <outlet property="addButton" destination="AdU-io-ohp" id="KvN-HW-S7h"/>
+                        <outlet property="collectionView" destination="jgF-Bf-bst" id="xLr-SN-R9D"/>
+                        <outlet property="edit" destination="X7W-IZ-7Gn" id="kFg-rj-Llf"/>
+                        <outlet property="githubAddress" destination="Y2h-G3-GNP" id="egX-4P-uvp"/>
+                        <outlet property="introAndUpdate" destination="mgv-Ek-3Os" id="uXK-W9-0WI"/>
+                        <outlet property="languages" destination="bhs-zH-bAd" id="zHo-pI-pWD"/>
+                        <outlet property="pinnedSwitch" destination="6pZ-PM-qrj" id="Dp3-e1-pZT"/>
+                        <outlet property="projectName" destination="r0i-2E-qh2" id="FWM-Py-AeI"/>
+                        <outlet property="save" destination="dLj-G1-aRn" id="d70-gK-nrX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGI-pP-BK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -241,9 +262,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="max 350 character" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-cu-3G7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-cu-3G7">
                                 <rect key="frame" x="10" y="278" width="394" height="120"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="qS2-0t-nWA"/>
                                 </constraints>
@@ -291,8 +312,16 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Settings" id="cam-cc-3wh">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="2cE-im-D9z"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="c1E-0r-ZMG"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="2cE-im-D9z">
+                                            <connections>
+                                                <action selector="editTapped:" destination="j9N-nn-1ki" id="rcD-iu-ngy"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="c1E-0r-ZMG">
+                                            <connections>
+                                                <action selector="saveTapped:" destination="j9N-nn-1ki" id="0AR-YA-cTr"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -485,6 +514,6 @@
         <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2qS-xp-i5F"/>
+        <segue reference="8iA-Xn-szr"/>
     </inferredMetricsTieBreakers>
 </document>

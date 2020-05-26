@@ -36,4 +36,9 @@ class PersonInfoEditViewController: UIViewController, UITableViewDelegate, UITab
         tableView.dataSource = self
         tableView.delegate = self
     }
+    @IBAction func editTapped(_ sender: Any) {
+    }
+    @IBAction func saveTapped(_ sender: Any) {
+    }
+    
 }
