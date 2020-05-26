@@ -14,6 +14,8 @@
 		AE504D78247D4F18006EBF13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE504D76247D4F18006EBF13 /* LaunchScreen.storyboard */; };
 		AE504D81247DBFDA006EBF13 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D80247DBFDA006EBF13 /* CoreDataStack.swift */; };
 		AE504D85247DC01A006EBF13 /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE504D83247DC01A006EBF13 /* Person.xcdatamodeld */; };
+		AE504D87247DCAA7006EBF13 /* representations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D86247DCAA7006EBF13 /* representations.swift */; };
+		AE504D89247DCBBD006EBF13 /* convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D88247DCBBD006EBF13 /* convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AE504D79247D4F18006EBF13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE504D80247DBFDA006EBF13 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AE504D84247DC01A006EBF13 /* Person.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Person.xcdatamodel; sourceTree = "<group>"; };
+		AE504D86247DCAA7006EBF13 /* representations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = representations.swift; sourceTree = "<group>"; };
+		AE504D88247DCBBD006EBF13 /* convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convenience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				AE504D80247DBFDA006EBF13 /* CoreDataStack.swift */,
+				AE504D88247DCBBD006EBF13 /* convenience.swift */,
+				AE504D86247DCAA7006EBF13 /* representations.swift */,
 				AE504D83247DC01A006EBF13 /* Person.xcdatamodeld */,
 			);
 			path = Model;
@@ -157,6 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE504D87247DCAA7006EBF13 /* representations.swift in Sources */,
+				AE504D89247DCBBD006EBF13 /* convenience.swift in Sources */,
 				AE504D81247DBFDA006EBF13 /* CoreDataStack.swift in Sources */,
 				AE504D6C247D4F17006EBF13 /* AppDelegate.swift in Sources */,
 				AE504D85247DC01A006EBF13 /* Person.xcdatamodeld in Sources */,

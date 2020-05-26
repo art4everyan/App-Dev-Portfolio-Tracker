@@ -12,11 +12,12 @@
         <attribute name="introduction" optional="YES" attributeType="String"/>
         <attribute name="languages" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="pinned" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="personAndProject" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="projectAndPerson" inverseEntity="Person"/>
     </entity>
     <elements>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="Project" positionX="-54" positionY="18" width="128" height="148"/>
+        <element name="Project" positionX="-54" positionY="18" width="128" height="163"/>
     </elements>
 </model>
