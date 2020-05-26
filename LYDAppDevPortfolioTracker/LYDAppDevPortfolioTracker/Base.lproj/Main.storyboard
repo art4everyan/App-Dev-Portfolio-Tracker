@@ -75,6 +75,9 @@
                         <viewLayoutGuide key="safeArea" id="2eL-dz-VdQ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All Projects" image="folder" catalog="system" id="f8E-xh-thc"/>
+                    <connections>
+                        <outlet property="tableView" destination="7Q2-WW-B1B" id="xRl-tY-b3M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Iz-wC-Mbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -410,7 +413,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="neB-Ft-DL6"/>
                                 </constraints>
-                                <string key="text">Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111Intro11111</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
