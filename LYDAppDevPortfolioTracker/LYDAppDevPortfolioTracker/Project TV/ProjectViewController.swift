@@ -13,9 +13,10 @@ class ProjectViewController: UIViewController {
     var personController: PersonController?
     var project: Project? {
         didSet {
-            
+           updateViews()
         }
     }
+    var person: Person?
     
 // MARK: - Properties
     
@@ -32,10 +33,11 @@ class ProjectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
     
     func updateViews() {
-        if let project = project {
+        if let project = project, isViewLoaded {
             languages.text = project.languages
             languages.isUserInteractionEnabled = false
             projectName.text = project.name
@@ -46,7 +48,7 @@ class ProjectViewController: UIViewController {
             introAndUpdate.isUserInteractionEnabled = false
             edit.isEnabled = true
             
-        } else {
+        } else if isViewLoaded {
             languages.text = ""
             languages.isUserInteractionEnabled = true
             projectName.text = ""
@@ -56,7 +58,16 @@ class ProjectViewController: UIViewController {
             introAndUpdate.text = ""
             introAndUpdate.isUserInteractionEnabled = true
             edit.isEnabled = false
+            edit.title = ""
             projectName.becomeFirstResponder()
+        }
+    }
+    
+    @IBAction func switchToggled(_ sender: Any) {
+        if pinnedSwitch.isOn {
+            pinnedSwitch.isOn = false
+        } else {
+            pinnedSwitch.isOn = true
         }
     }
     @IBAction func editTapped(_ sender: Any) {
@@ -64,9 +75,22 @@ class ProjectViewController: UIViewController {
         projectName.isUserInteractionEnabled = true
         githubAddress.isUserInteractionEnabled = true
         introAndUpdate.isUserInteractionEnabled = true
+        edit.isEnabled = false
+        edit.title = ""
     }
+    
     @IBAction func saveTapped(_ sender: Any) {
+        if let personController = personController, let person = person {
+            guard let languages = languages.text, !languages.isEmpty, let name = projectName.text, !name.isEmpty, let github = githubAddress.text, !github.isEmpty else {return}
+            if let project = project {
+                personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                
+            } else {
+                personController.createProject(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
+            }
+        }
     }
+    
     @IBAction func addTapped(_ sender: Any) {
     }
     

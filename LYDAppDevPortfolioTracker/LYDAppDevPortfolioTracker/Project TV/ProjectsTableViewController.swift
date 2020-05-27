@@ -11,8 +11,7 @@ import CoreData
 
 class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var personVC: PersonInfoViewController!
-    lazy var personController = personVC.personController
+    var personController = PersonController()
     
     var fetchedResultsController: NSFetchedResultsController<Person> {
         let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
@@ -69,14 +68,17 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
         switch segue.identifier {
         case "AddSegue":
             guard let addVC = segue.destination as? ProjectViewController else {return}
+            addVC.person = fetchedResultsController.fetchedObjects?.first
             addVC.personController = personController
             
         case "ShowSegue":
             guard let showVC = segue.destination as? ProjectViewController, let indexPath = tableView.indexPathForSelectedRow else {return}
+            showVC.person = fetchedResultsController.fetchedObjects?.first
             showVC.personController = personController
             let projects = Array(fetchedResultsController.fetchedObjects?.first?.projects ?? [])
             let project = projects[indexPath.row]
             showVC.project = (project as! Project)
+            
             
         default:
             break
