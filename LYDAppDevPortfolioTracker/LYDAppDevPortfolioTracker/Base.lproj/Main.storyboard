@@ -275,45 +275,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinned Projects:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puA-DT-IHh">
-                                <rect key="frame" x="10" y="418" width="128" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-He-30J">
-                                <rect key="frame" x="10" y="459" width="394" height="403"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PinnedCellEdit" textLabel="qHT-rW-LCV" detailTextLabel="yyR-FU-DPy" style="IBUITableViewCellStyleValue1" id="l5J-re-icl">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l5J-re-icl" id="JZJ-mj-IbV">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qHT-rW-LCV">
-                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yyR-FU-DPy">
-                                                    <rect key="frame" x="330" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="peE-CN-Nj6" kind="presentation" identifier="PinnedProjectEditSegue" modalPresentationStyle="fullScreen" id="NfM-70-mXo"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ErM-Cy-CbX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
@@ -348,19 +309,12 @@
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="8I0-yB-nqE" secondAttribute="trailing" constant="10" id="8Rp-V3-nrg"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="ErM-Cy-CbX" secondAttribute="trailing" id="8Ss-5l-wJL"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" id="Kcf-hU-BP4"/>
-                            <constraint firstItem="puA-DT-IHh" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="VcJ-C6-UmG"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="TX9-xr-gbN" secondAttribute="trailing" constant="10" id="VnH-gH-CPS"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="bzc-cu-3G7" secondAttribute="trailing" constant="10" id="Vna-kY-oUb"/>
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="top" secondItem="8sv-H1-rhy" secondAttribute="top" id="YvJ-Ur-cnS"/>
-                            <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="NDv-He-30J" secondAttribute="trailing" constant="10" id="bmd-qM-ZCY"/>
                             <constraint firstItem="bzc-cu-3G7" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="cZI-u1-WkW"/>
-                            <constraint firstItem="NDv-He-30J" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="dI7-sY-TPF"/>
                             <constraint firstItem="8I0-yB-nqE" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" constant="20" id="fDm-yn-I4d"/>
-                            <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="puA-DT-IHh" secondAttribute="trailing" symbolic="YES" id="hZY-9a-xtg"/>
-                            <constraint firstItem="puA-DT-IHh" firstAttribute="top" secondItem="bzc-cu-3G7" secondAttribute="bottom" constant="20" id="mnV-4W-zKg"/>
                             <constraint firstItem="TX9-xr-gbN" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="10" id="oms-D1-mVg"/>
-                            <constraint firstItem="NDv-He-30J" firstAttribute="top" secondItem="puA-DT-IHh" secondAttribute="bottom" constant="20" id="p4V-K5-ube"/>
-                            <constraint firstItem="8sv-H1-rhy" firstAttribute="bottom" secondItem="NDv-He-30J" secondAttribute="bottom" id="pTy-R5-GTc"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" id="uqg-4k-z7x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8sv-H1-rhy"/>
@@ -373,8 +327,6 @@
                         <outlet property="imageView" destination="5zD-Ge-mrs" id="68P-Um-VJh"/>
                         <outlet property="introduction" destination="bzc-cu-3G7" id="8Z5-Pp-OrR"/>
                         <outlet property="name" destination="8I0-yB-nqE" id="5Zt-tC-t6L"/>
-                        <outlet property="save" destination="c1E-0r-ZMG" id="qoQ-qw-cXh"/>
-                        <outlet property="tableView" destination="NDv-He-30J" id="TWB-hV-hd5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG6-SS-MIL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -537,6 +489,6 @@
         <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j0z-Ew-gkq"/>
+        <segue reference="8iA-Xn-szr"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -96,8 +96,8 @@ extension ProjectsTableViewController :NSFetchedResultsControllerDelegate {
                     newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            guard let newIndexPath = newIndexPath else { return }
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            guard let indexPath = indexPath else { return }
+            tableView.insertRows(at: [indexPath], with: .automatic)
         case .update:
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)

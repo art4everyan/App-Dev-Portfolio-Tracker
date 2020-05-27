@@ -20,19 +20,20 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PinnedCell", for: indexPath)
-        if let person = personController.person {
-            guard let project = person.projects?[indexPath.row] else {
-                cell.detailTextLabel?.text = ""
-                cell.textLabel?.text = ""
-                return cell
-            }
-            cell.textLabel?.text = project.name
-            cell.detailTextLabel?.text = project.languages
-        } else {
-            cell.detailTextLabel?.text = ""
-            cell.textLabel?.text = ""
-            return cell
-        }
+        
+//        if let person = personController.person {
+//            guard let project = person.projects?[indexPath.row] else {
+//                cell.detailTextLabel?.text = ""
+//                cell.textLabel?.text = ""
+//                return cell
+//            }
+//            cell.textLabel?.text = project.name
+//            cell.detailTextLabel?.text = project.languages
+//        } else {
+//            cell.detailTextLabel?.text = ""
+//            cell.textLabel?.text = ""
+//            return cell
+//        }
         
         return cell
     }
@@ -56,28 +57,33 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+            self.fetchedResultsController = {
+                let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+                let context = CoreDataStack.shared.mainContext
+                let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                     managedObjectContext: context,
+                                                     sectionNameKeyPath: nil,
+                                                     cacheName: nil)
+                frc.delegate = self
+                do {
+                    try frc.performFetch()
+                } catch {
+                    NSLog("Error doing frc fetch")
+                }
+                return frc
+            } ()
         
-        let person = personController.person
-        guard person != nil else {
+        if let person = fetchedResultsController?.fetchedObjects?.first {
+            
+            nameLabel.text = person.name
+            gitLabel.text = person.github
+            introTextField.text = person.introduction ?? ""
+            
+        } else {
             performSegue(withIdentifier: "SettingSegue", sender: self)
-            return
         }
-        self.fetchedResultsController = {
-            let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-            let context = CoreDataStack.shared.mainContext
-            let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                 managedObjectContext: context,
-                                                 sectionNameKeyPath: nil,
-                                                 cacheName: nil)
-            frc.delegate = self
-            do {
-                try frc.performFetch()
-            } catch {
-                NSLog("Error doing frc fetch")
-            }
-            return frc
-        } ()
+        
         self.tableView.reloadData()
     }
     
@@ -86,7 +92,10 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         case "SettingSegue":
             guard let settingVC = segue.destination as? PersonInfoEditViewController else {return}
             settingVC.personController = personController
-            settingVC.person = fetchedResultsController?.fetchedObjects?[0]
+            if let person = fetchedResultsController?.fetchedObjects?.first {
+                settingVC.person = person
+            }
+            
         case "PinnedProjectSegue":
             print("1")
             
@@ -123,8 +132,8 @@ extension PersonInfoViewController: NSFetchedResultsControllerDelegate {
                     newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            guard let newIndexPath = newIndexPath else { return }
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            guard let indexPath = indexPath else { return }
+            tableView.insertRows(at: [indexPath], with: .automatic)
         case .update:
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)

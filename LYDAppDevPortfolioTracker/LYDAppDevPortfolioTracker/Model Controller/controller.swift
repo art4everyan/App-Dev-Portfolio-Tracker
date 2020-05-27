@@ -11,7 +11,7 @@ import CoreData
 
 class PersonController {
     
-    var person: Person?
+    //var person: Person?
     
     func updateProjects(project: Project, name: String, intro: String, pinned: Bool, languages: String, github: String){
         project.name = name
@@ -27,8 +27,8 @@ class PersonController {
         }
     }
     
-    func updatePerson(name: String, intro: String, github: String) {
-        guard let person = person else {return}
+    func updatePerson(person: Person, name: String, intro: String, github: String) {
+        
         person.name = name
         person.introduction = intro
         person.github = github
@@ -41,13 +41,12 @@ class PersonController {
     }
     func createPerson(name: String, github: String, intro: String?) {
         
-        let _ = Person(name: name, github: github, projects: nil, introduction: intro ?? "")
+        let _ = Person(name: name, github: github, introduction: intro ?? "")
         do {
             try CoreDataStack.shared.save()
         } catch {
             NSLog("Creating person error")
         }
-        
     }
     func deleteProject(project: Project){
         CoreDataStack.shared.mainContext.delete(project)
