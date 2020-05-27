@@ -14,12 +14,12 @@
 		AE504D78247D4F18006EBF13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE504D76247D4F18006EBF13 /* LaunchScreen.storyboard */; };
 		AE504D81247DBFDA006EBF13 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D80247DBFDA006EBF13 /* CoreDataStack.swift */; };
 		AE504D85247DC01A006EBF13 /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE504D83247DC01A006EBF13 /* Person.xcdatamodeld */; };
-		AE504D87247DCAA7006EBF13 /* representations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D86247DCAA7006EBF13 /* representations.swift */; };
 		AE504D89247DCBBD006EBF13 /* convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D88247DCBBD006EBF13 /* convenience.swift */; };
 		AE504D8B247DD209006EBF13 /* PersonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D8A247DD209006EBF13 /* PersonInfoViewController.swift */; };
 		AE504D8E247DD3E2006EBF13 /* PersonInfoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D8D247DD3E2006EBF13 /* PersonInfoEditViewController.swift */; };
 		AE504D94247DD859006EBF13 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D93247DD859006EBF13 /* ProjectViewController.swift */; };
 		AE504D96247DDB10006EBF13 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D95247DDB10006EBF13 /* ProjectsTableViewController.swift */; };
+		AE504D98247DFB0A006EBF13 /* controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D97247DFB0A006EBF13 /* controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +32,12 @@
 		AE504D79247D4F18006EBF13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE504D80247DBFDA006EBF13 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AE504D84247DC01A006EBF13 /* Person.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Person.xcdatamodel; sourceTree = "<group>"; };
-		AE504D86247DCAA7006EBF13 /* representations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = representations.swift; sourceTree = "<group>"; };
 		AE504D88247DCBBD006EBF13 /* convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = convenience.swift; sourceTree = "<group>"; };
 		AE504D8A247DD209006EBF13 /* PersonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoViewController.swift; sourceTree = "<group>"; };
 		AE504D8D247DD3E2006EBF13 /* PersonInfoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoEditViewController.swift; sourceTree = "<group>"; };
 		AE504D93247DD859006EBF13 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		AE504D95247DDB10006EBF13 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
+		AE504D97247DFB0A006EBF13 /* controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +70,14 @@
 		AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */ = {
 			isa = PBXGroup;
 			children = (
-				AE504D7F247DBF87006EBF13 /* Other */,
+				AE504D82247DBFE0006EBF13 /* Model */,
 				AE504D71247D4F17006EBF13 /* Main.storyboard */,
+				AE504D99247DFB10006EBF13 /* Model Controller */,
 				AE504D92247DD6B8006EBF13 /* Project TV */,
 				AE504D8F247DD3E7006EBF13 /* PersonInfoEdit */,
 				AE504D8C247DD225006EBF13 /* PersonInfo */,
 				AE504D79247D4F18006EBF13 /* Info.plist */,
-				AE504D82247DBFE0006EBF13 /* Model */,
+				AE504D7F247DBF87006EBF13 /* Other */,
 			);
 			path = LYDAppDevPortfolioTracker;
 			sourceTree = "<group>";
@@ -97,7 +98,6 @@
 			children = (
 				AE504D80247DBFDA006EBF13 /* CoreDataStack.swift */,
 				AE504D88247DCBBD006EBF13 /* convenience.swift */,
-				AE504D86247DCAA7006EBF13 /* representations.swift */,
 				AE504D83247DC01A006EBF13 /* Person.xcdatamodeld */,
 			);
 			path = Model;
@@ -126,6 +126,14 @@
 				AE504D93247DD859006EBF13 /* ProjectViewController.swift */,
 			);
 			path = "Project TV";
+			sourceTree = "<group>";
+		};
+		AE504D99247DFB10006EBF13 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE504D97247DFB0A006EBF13 /* controller.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE504D94247DD859006EBF13 /* ProjectViewController.swift in Sources */,
-				AE504D87247DCAA7006EBF13 /* representations.swift in Sources */,
+				AE504D98247DFB0A006EBF13 /* controller.swift in Sources */,
 				AE504D8E247DD3E2006EBF13 /* PersonInfoEditViewController.swift in Sources */,
 				AE504D89247DCBBD006EBF13 /* convenience.swift in Sources */,
 				AE504D81247DBFDA006EBF13 /* CoreDataStack.swift in Sources */,
