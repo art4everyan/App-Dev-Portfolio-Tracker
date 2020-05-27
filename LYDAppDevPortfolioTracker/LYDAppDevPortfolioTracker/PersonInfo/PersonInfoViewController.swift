@@ -20,21 +20,19 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PinnedCell", for: indexPath)
-        
-//        if let person = personController.person {
-//            guard let project = person.projects?[indexPath.row] else {
-//                cell.detailTextLabel?.text = ""
-//                cell.textLabel?.text = ""
-//                return cell
-//            }
-//            cell.textLabel?.text = project.name
-//            cell.detailTextLabel?.text = project.languages
-//        } else {
-//            cell.detailTextLabel?.text = ""
-//            cell.textLabel?.text = ""
-//            return cell
-//        }
-        
+        if let projects = fetchedResultsController?.fetchedObjects?.first?.projects {
+            let allProject: [Project] = projects.allObjects as! [Project]
+            let filtered = allProject.filter({$0.pinned == true})
+
+            if filtered.count > 0 {
+                let project = filtered[indexPath.row]
+                cell.textLabel?.text = project.name
+                cell.detailTextLabel?.text = project.languages
+            }
+        } else {
+            cell.textLabel?.text = ""
+            cell.detailTextLabel?.text = ""
+        }
         return cell
     }
     

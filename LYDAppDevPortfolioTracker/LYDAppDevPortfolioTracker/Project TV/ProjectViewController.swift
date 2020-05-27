@@ -17,7 +17,7 @@ class ProjectViewController: UIViewController {
         }
     }
     var person: Person?
-    
+    var isOn: Bool = false
 // MARK: - Properties
     
     @IBOutlet var languages: UITextField!
@@ -46,6 +46,9 @@ class ProjectViewController: UIViewController {
             githubAddress.isUserInteractionEnabled = false
             introAndUpdate.text = project.introduction ?? ""
             introAndUpdate.isUserInteractionEnabled = false
+            pinnedSwitch.isOn = project.pinned
+            pinnedSwitch.isUserInteractionEnabled = false
+            
             edit.isEnabled = true
             
         } else if isViewLoaded {
@@ -57,24 +60,23 @@ class ProjectViewController: UIViewController {
             githubAddress.isUserInteractionEnabled = true
             introAndUpdate.text = ""
             introAndUpdate.isUserInteractionEnabled = true
+            pinnedSwitch.isUserInteractionEnabled = true
             edit.isEnabled = false
             edit.title = ""
             projectName.becomeFirstResponder()
         }
     }
     
-    @IBAction func switchToggled(_ sender: Any) {
-        if pinnedSwitch.isOn {
-            pinnedSwitch.isOn = false
-        } else {
-            pinnedSwitch.isOn = true
-        }
+    @IBAction func switchToggled(_ sender: UISwitch!) {
+        isOn.toggle()
+        pinnedSwitch.setOn(isOn, animated: true)
     }
     @IBAction func editTapped(_ sender: Any) {
         languages.isUserInteractionEnabled = true
         projectName.isUserInteractionEnabled = true
         githubAddress.isUserInteractionEnabled = true
         introAndUpdate.isUserInteractionEnabled = true
+        pinnedSwitch.isUserInteractionEnabled = true
         edit.isEnabled = false
         edit.title = ""
     }
@@ -83,12 +85,13 @@ class ProjectViewController: UIViewController {
         if let personController = personController, let person = person {
             guard let languages = languages.text, !languages.isEmpty, let name = projectName.text, !name.isEmpty, let github = githubAddress.text, !github.isEmpty else {return}
             if let project = project {
-                personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: isOn, languages: languages, github: github)
                 
             } else {
                 personController.createProject(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
             }
         }
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addTapped(_ sender: Any) {
