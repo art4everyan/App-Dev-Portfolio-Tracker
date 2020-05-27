@@ -13,7 +13,7 @@ extension Person {
     
     @NSManaged public var projects: [Project]?
     
-    @discardableResult convenience init(uuid: UUID, name: String, github: String, projects: [Project], introduction:String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init(uuid: UUID = UUID(), name: String, github: String, projects: [Project]?, introduction:String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.uuid = uuid
         self.name = name
