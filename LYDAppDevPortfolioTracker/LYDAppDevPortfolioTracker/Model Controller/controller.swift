@@ -13,9 +13,9 @@ class PersonController {
     
     //var person: Person?
     
-    func updateProjects(project: Project, name: String, intro: String, pinned: Bool, languages: String, github: String){
+    func updateProjects(project: Project, name: String, intro: String?, pinned: Bool, languages: String, github: String){
         project.name = name
-        project.introduction = intro
+        project.introduction = intro ?? ""
         project.pinned = pinned
         project.languages = languages
         project.github = github
@@ -46,6 +46,16 @@ class PersonController {
             try CoreDataStack.shared.save()
         } catch {
             NSLog("Creating person error")
+        }
+    }
+    func createProject(person: Person, name: String, intro: String?, pinned: Bool, languages: String, github: String) {
+        
+        let project = Project(name: name, github: github, introduction: intro ?? "", languages: languages, pinned: pinned)
+        person.addToProjects(project)
+        do {
+            try CoreDataStack.shared.save()
+        } catch {
+            NSLog("Creating project error")
         }
     }
     func deleteProject(project: Project){

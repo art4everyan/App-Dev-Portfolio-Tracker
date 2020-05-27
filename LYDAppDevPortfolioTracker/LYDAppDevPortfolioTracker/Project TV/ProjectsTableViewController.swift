@@ -11,6 +11,9 @@ import CoreData
 
 class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var personVC: PersonInfoViewController!
+    lazy var personController = personVC.personController
+    
     var fetchedResultsController: NSFetchedResultsController<Person> {
         let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -28,12 +31,19 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
             return frc
     }
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return fetchedResultsController.fetchedObjects?.first?.projects?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllProjectCell", for: indexPath)
+        
+        let projects = Array(fetchedResultsController.fetchedObjects?.first?.projects ?? [])
+        let project = projects[indexPath.row]
+        cell.textLabel?.text = (project as! Project).name ?? ""
+        cell.detailTextLabel?.text = (project as! Project).languages ?? ""
         
         return cell
     }
@@ -58,9 +68,16 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "AddSegue":
-            print("1")
+            guard let addVC = segue.destination as? ProjectViewController else {return}
+            addVC.personController = personController
+            
         case "ShowSegue":
-            print("2")
+            guard let showVC = segue.destination as? ProjectViewController, let indexPath = tableView.indexPathForSelectedRow else {return}
+            showVC.personController = personController
+            let projects = Array(fetchedResultsController.fetchedObjects?.first?.projects ?? [])
+            let project = projects[indexPath.row]
+            showVC.project = (project as! Project)
+            
         default:
             break
         }
