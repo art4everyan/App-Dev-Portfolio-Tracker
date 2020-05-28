@@ -99,8 +99,15 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
             }
             
         case "PinnedProjectSegue":
-            print("1")
-            
+            guard let pinnedVC = segue.destination as? ProjectViewController, let indexPath = tableView.indexPathForSelectedRow else {return}
+            if let projects = fetchedResultsController?.fetchedObjects?.first?.projects {
+                let allProject: [Project] = projects.allObjects as! [Project]
+                let filtered = allProject.filter({$0.pinned == true})
+                
+                pinnedVC.project = filtered[indexPath.row]
+            }
+            pinnedVC.person = fetchedResultsController?.fetchedObjects?.first
+            pinnedVC.personController = personController
         default:
             break
         }
