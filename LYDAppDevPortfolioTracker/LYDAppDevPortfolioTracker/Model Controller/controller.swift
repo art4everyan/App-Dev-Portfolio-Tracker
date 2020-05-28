@@ -14,6 +14,8 @@ class PersonController {
     //var person: Person?
     
     func updateProjects(project: Project, name: String, intro: String?, pinned: Bool, languages: String, github: String){
+        
+        
         project.name = name
         project.introduction = intro ?? ""
         project.pinned = pinned

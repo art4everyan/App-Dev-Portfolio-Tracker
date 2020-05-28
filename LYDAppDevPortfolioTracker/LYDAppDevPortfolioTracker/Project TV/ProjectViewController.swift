@@ -85,8 +85,7 @@ class ProjectViewController: UIViewController {
         if let personController = personController, let person = person {
             guard let languages = languages.text, !languages.isEmpty, let name = projectName.text, !name.isEmpty, let github = githubAddress.text, !github.isEmpty else {return}
             if let project = project {
-                personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: isOn, languages: languages, github: github)
-                
+                personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: pinnedSwitch.isOn, languages: languages, github: github)
             } else {
                 personController.createProject(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
             }

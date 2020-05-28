@@ -248,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGI-pP-BK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357.97101449275362" y="979.6875"/>
+            <point key="canvasLocation" x="312" y="719"/>
         </scene>
         <!--Settings-->
         <scene sceneID="cm3-5L-8wc">
@@ -492,6 +492,6 @@
         <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8iA-Xn-szr"/>
+        <segue reference="j0z-Ew-gkq"/>
     </inferredMetricsTieBreakers>
 </document>

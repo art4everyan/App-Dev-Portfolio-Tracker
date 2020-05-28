@@ -15,7 +15,11 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
     var fetchedResultsController: NSFetchedResultsController<Person>?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        let projects = fetchedResultsController?.fetchedObjects?.first?.projects ?? []
+        let allProject: [Project] = projects.allObjects as! [Project]
+        let filtered = allProject.filter({$0.pinned == true})
+            
+        return filtered.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -130,8 +134,8 @@ extension PersonInfoViewController: NSFetchedResultsControllerDelegate {
                     newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            guard let indexPath = indexPath else { return }
-            tableView.insertRows(at: [indexPath], with: .automatic)
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
         case .update:
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)
