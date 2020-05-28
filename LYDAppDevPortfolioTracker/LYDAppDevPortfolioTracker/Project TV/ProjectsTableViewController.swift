@@ -11,38 +11,64 @@ import CoreData
 
 class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var personController = PersonController()
-    
-    var fetchedResultsController: NSFetchedResultsController<Person> {
+    var person: Person? = {
         let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-            let context = CoreDataStack.shared.mainContext
-            let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                 managedObjectContext: context,
-                                                 sectionNameKeyPath: nil,
-                                                 cacheName: nil)
-            frc.delegate = self
-            do {
-                try frc.performFetch()
-            } catch {
-                NSLog("Error doing frc fetch")
-            }
-            return frc
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        let context = CoreDataStack.shared.mainContext
+        return try? context.fetch(fetchRequest).first
+    } ()
+    
+    var personController = PersonController()
+    lazy var fetchProjectController: NSFetchedResultsController<Project> = {
+        let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "pinned", ascending: true)]
+        let context = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: context,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        frc.delegate = self
+        do {
+            try frc.performFetch()
+        } catch {
+            NSLog("Error doing frc fetch")
+        }
+        return frc
+    }()
+    
+//    lazy var fetchedResultsController: NSFetchedResultsController<Person> = {
+//        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+//            let context = CoreDataStack.shared.mainContext
+//            let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+//                                                 managedObjectContext: context,
+//                                                 sectionNameKeyPath: nil,
+//                                                 cacheName: nil)
+//            frc.delegate = self
+//            do {
+//                try frc.performFetch()
+//            } catch {
+//                NSLog("Error doing frc fetch")
+//            }
+//            return frc
+//    } ()
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedResultsController.fetchedObjects?.first?.projects?.count ?? 0
+        return fetchProjectController.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllProjectCell", for: indexPath)
         
-        let projects = Array(fetchedResultsController.fetchedObjects?.first?.projects ?? [])
-        let project = projects[indexPath.row]
-        cell.textLabel?.text = (project as! Project).name ?? ""
-        cell.detailTextLabel?.text = (project as! Project).languages ?? ""
+        let projects = fetchProjectController.fetchedObjects 
+        let project = projects?[indexPath.row]
+        cell.textLabel?.text = project?.name
+        cell.detailTextLabel?.text = project?.languages
         
         return cell
     }
@@ -53,11 +79,12 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        //tableView.reloadData()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         tableView.reloadData()
     }
     
@@ -68,23 +95,32 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
         switch segue.identifier {
         case "AddSegue":
             guard let addVC = segue.destination as? ProjectViewController else {return}
-            addVC.person = fetchedResultsController.fetchedObjects?.first
+            addVC.person = person
             addVC.personController = personController
             
         case "ShowSegue":
             guard let showVC = segue.destination as? ProjectViewController, let indexPath = tableView.indexPathForSelectedRow else {return}
-            showVC.person = fetchedResultsController.fetchedObjects?.first
+            showVC.person = person
             showVC.personController = personController
-            let projects = Array(fetchedResultsController.fetchedObjects?.first?.projects ?? [])
-            let project = projects[indexPath.row]
-            showVC.project = (project as! Project)
+            let projects = fetchProjectController.fetchedObjects
+            let project = projects?[indexPath.row]
+            showVC.project = project
             
             
         default:
             break
         }
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+
+            let projects = fetchProjectController.fetchedObjects
+            guard projects != nil else {return}
+            
+            let project = projects![indexPath.row]
+            personController.deleteProject(project: project)
+        } 
+    }
 
 }
 
@@ -115,8 +151,8 @@ extension ProjectsTableViewController :NSFetchedResultsControllerDelegate {
                     newIndexPath: IndexPath?) {
         switch type {
         case .insert:
-            guard let indexPath = indexPath else { return }
-            tableView.insertRows(at: [indexPath], with: .automatic)
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
         case .update:
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)

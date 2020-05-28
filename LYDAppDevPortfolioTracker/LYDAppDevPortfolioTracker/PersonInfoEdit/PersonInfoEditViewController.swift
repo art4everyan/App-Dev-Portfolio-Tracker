@@ -60,6 +60,9 @@ class PersonInfoEditViewController: UIViewController {
         edit.isEnabled = false
     }
     
+    @IBAction func goBackTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func saveTapped(_ sender: Any) {
         if let personController = personController {

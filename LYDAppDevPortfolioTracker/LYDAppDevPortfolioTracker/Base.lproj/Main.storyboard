@@ -148,7 +148,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mgv-Ek-3Os">
-                                <rect key="frame" x="10" y="564" width="394" height="298"/>
+                                <rect key="frame" x="10" y="564" width="394" height="198"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -199,14 +199,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fan-YG-Ja8">
+                                <rect key="frame" x="10" y="802" width="394" height="60"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
+                                <state key="normal" title="Go Back/Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="fan-YG-Ja8" firstAttribute="top" secondItem="mgv-Ek-3Os" secondAttribute="bottom" constant="40" id="0xo-Cj-dWv"/>
                             <constraint firstItem="6pZ-PM-qrj" firstAttribute="top" secondItem="jgF-Bf-bst" secondAttribute="bottom" constant="17" id="1R4-sM-Zxy"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="AdU-io-ohp" secondAttribute="trailing" constant="100" id="1dq-TF-IXh"/>
+                            <constraint firstItem="Ve3-H4-t9B" firstAttribute="bottom" secondItem="fan-YG-Ja8" secondAttribute="bottom" id="2ul-ad-e4I"/>
                             <constraint firstItem="Y2h-G3-GNP" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="7dv-7W-2Uw"/>
                             <constraint firstItem="bhs-zH-bAd" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="7iP-Ly-f0L"/>
-                            <constraint firstItem="Ve3-H4-t9B" firstAttribute="bottom" secondItem="mgv-Ek-3Os" secondAttribute="bottom" id="7nH-mc-fQe"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="V8a-9i-Xk4" secondAttribute="trailing" constant="258" id="CBX-A6-1J1"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="jgF-Bf-bst" secondAttribute="trailing" constant="10" id="MnW-oC-3ZZ"/>
                             <constraint firstItem="AdU-io-ohp" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="100" id="PZs-qJ-c9e"/>
@@ -222,6 +231,8 @@
                             <constraint firstItem="mgv-Ek-3Os" firstAttribute="top" secondItem="V8a-9i-Xk4" secondAttribute="bottom" constant="20" id="dle-Xg-50N"/>
                             <constraint firstItem="Y2h-G3-GNP" firstAttribute="top" secondItem="r0i-2E-qh2" secondAttribute="bottom" constant="20" id="drR-0d-Dtm"/>
                             <constraint firstItem="AdU-io-ohp" firstAttribute="top" secondItem="bhs-zH-bAd" secondAttribute="bottom" constant="8" id="eDy-xE-8iI"/>
+                            <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="fan-YG-Ja8" secondAttribute="trailing" constant="10" id="fKF-Mz-DuW"/>
+                            <constraint firstItem="fan-YG-Ja8" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="fOh-BW-Us9"/>
                             <constraint firstItem="bhs-zH-bAd" firstAttribute="top" secondItem="Y2h-G3-GNP" secondAttribute="bottom" constant="20" id="fs9-hG-eQt"/>
                             <constraint firstItem="r0i-2E-qh2" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="10" id="gGk-uU-eIu"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="r0i-2E-qh2" secondAttribute="trailing" constant="10" id="ie7-bP-N1f"/>
@@ -248,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGI-pP-BK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="312" y="719"/>
+            <point key="canvasLocation" x="311.59420289855075" y="718.52678571428567"/>
         </scene>
         <!--Settings-->
         <scene sceneID="cm3-5L-8wc">
@@ -270,7 +281,7 @@
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-cu-3G7">
                                 <rect key="frame" x="10" y="278" width="394" height="120"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="qS2-0t-nWA"/>
                                 </constraints>
@@ -302,6 +313,20 @@
                                     <constraint firstAttribute="width" constant="180" id="z1x-fb-QNB"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-rL-Rig">
+                                <rect key="frame" x="10" y="448" width="394" height="80"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="qTe-WB-eAK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <state key="normal" title="Go Back/Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBackTapped:" destination="j9N-nn-1ki" eventType="touchUpInside" id="TeE-91-Xvf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -312,11 +337,14 @@
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="8I0-yB-nqE" secondAttribute="trailing" constant="10" id="8Rp-V3-nrg"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="ErM-Cy-CbX" secondAttribute="trailing" id="8Ss-5l-wJL"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" id="Kcf-hU-BP4"/>
+                            <constraint firstItem="I5u-rL-Rig" firstAttribute="top" secondItem="bzc-cu-3G7" secondAttribute="bottom" constant="50" id="SQu-c8-yOG"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="TX9-xr-gbN" secondAttribute="trailing" constant="10" id="VnH-gH-CPS"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="bzc-cu-3G7" secondAttribute="trailing" constant="10" id="Vna-kY-oUb"/>
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="top" secondItem="8sv-H1-rhy" secondAttribute="top" id="YvJ-Ur-cnS"/>
+                            <constraint firstItem="I5u-rL-Rig" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="Zra-P9-G4P"/>
                             <constraint firstItem="bzc-cu-3G7" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="cZI-u1-WkW"/>
                             <constraint firstItem="8I0-yB-nqE" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" constant="20" id="fDm-yn-I4d"/>
+                            <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="I5u-rL-Rig" secondAttribute="trailing" constant="10" id="myg-lN-WIc"/>
                             <constraint firstItem="TX9-xr-gbN" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="10" id="oms-D1-mVg"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" id="uqg-4k-z7x"/>
                         </constraints>
@@ -405,6 +433,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KxA-QD-ksT" id="3Kb-oi-IyK"/>
+                                    <outlet property="delegate" destination="KxA-QD-ksT" id="7uv-BD-Ce3"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDz-ob-SOy">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -460,7 +492,7 @@
                         <outlet property="imageView" destination="c48-GP-y8a" id="gXL-wl-vtf"/>
                         <outlet property="introTextField" destination="3Vg-lc-pHq" id="0ge-CK-zA3"/>
                         <outlet property="nameLabel" destination="wJs-Tq-ZJg" id="bTX-Om-Ycb"/>
-                        <outlet property="tableView" destination="Oi1-Yw-z62" id="mmH-iQ-GEZ"/>
+                        <outlet property="tableView" destination="Oi1-Yw-z62" id="3NY-wK-T52"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f90-9f-5e8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

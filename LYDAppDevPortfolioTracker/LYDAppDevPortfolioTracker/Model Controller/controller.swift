@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreData
+import UIKit
+
 
 class PersonController {
     
@@ -15,15 +17,18 @@ class PersonController {
     
     func updateProjects(project: Project, name: String, intro: String?, pinned: Bool, languages: String, github: String){
         
+        let context = CoreDataStack.shared.container.newBackgroundContext()
         
-        project.name = name
-        project.introduction = intro ?? ""
-        project.pinned = pinned
-        project.languages = languages
-        project.github = github
+        context.performAndWait {
+            project.name = name
+            project.introduction = intro ?? ""
+            project.pinned = pinned
+            project.languages = languages
+            project.github = github
+        }
         
         do {
-            try CoreDataStack.shared.save()
+            try CoreDataStack.shared.save(context: context)
         } catch {
             NSLog("Saving project change failed")
         }
@@ -31,12 +36,16 @@ class PersonController {
     
     func updatePerson(person: Person, name: String, intro: String, github: String) {
         
-        person.name = name
-        person.introduction = intro
-        person.github = github
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.performAndWait {
+            person.name = name
+            person.introduction = intro
+            person.github = github
+        }
         
         do {
-            try CoreDataStack.shared.save()
+            try CoreDataStack.shared.save(context: context)
         } catch {
             NSLog("Saving person change failed")
         }
@@ -52,8 +61,11 @@ class PersonController {
     }
     func createProject(person: Person, name: String, intro: String?, pinned: Bool, languages: String, github: String) {
         
+        
         let project = Project(name: name, github: github, introduction: intro ?? "", languages: languages, pinned: pinned)
         person.addToProjects(project)
+        
+        
         do {
             try CoreDataStack.shared.save()
         } catch {
@@ -69,5 +81,5 @@ class PersonController {
             NSLog("Delete project failed")
         }
     }
-    
+
 }

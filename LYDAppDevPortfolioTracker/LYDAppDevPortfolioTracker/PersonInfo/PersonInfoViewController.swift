@@ -12,32 +12,49 @@ import CoreData
 class PersonInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var personController = PersonController()
-    var fetchedResultsController: NSFetchedResultsController<Person>?
+    var person: Person?
+    lazy var fetchProjectController: NSFetchedResultsController<Project> = {
+        
+            let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "pinned", ascending: true)]
+            fetchRequest.predicate = NSPredicate(format: "pinned == TRUE")
+            let context = CoreDataStack.shared.mainContext
+            let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                 managedObjectContext: context,
+                                                 sectionNameKeyPath: nil,
+                                                 cacheName: nil)
+            frc.delegate = self
+            do {
+                try frc.performFetch()
+            } catch {
+                NSLog("Error doing frc fetch")
+            }
+            return frc
+        
+    }()
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchProjectController.sections?.count ?? 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let projects = fetchedResultsController?.fetchedObjects?.first?.projects ?? []
-        let allProject: [Project] = projects.allObjects as! [Project]
-        let filtered = allProject.filter({$0.pinned == true})
-            
-        return filtered.count
+        //let x = fetchProjectController.fetchedObjects
+        return fetchProjectController.sections?[section].numberOfObjects ?? 0
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PinnedCell", for: indexPath)
-        if let projects = fetchedResultsController?.fetchedObjects?.first?.projects {
-            let allProject: [Project] = projects.allObjects as! [Project]
-            let filtered = allProject.filter({$0.pinned == true})
-
-            if filtered.count > 0 {
-                let project = filtered[indexPath.row]
-                cell.textLabel?.text = project.name
-                cell.detailTextLabel?.text = project.languages
-            }
+        if let projects = fetchProjectController.fetchedObjects {
+            let project = projects[indexPath.row]
+            cell.textLabel?.text = project.name
+            cell.detailTextLabel?.text = project.languages
+            return cell
         } else {
-            cell.textLabel?.text = ""
-            cell.detailTextLabel?.text = ""
+            return UITableViewCell()
         }
-        return cell
+
     }
     
 // MARK: - Properties
@@ -56,27 +73,25 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         tableView.delegate = self
         tableView.dataSource = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.reloadData()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-            self.fetchedResultsController = {
-                let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
-                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-                let context = CoreDataStack.shared.mainContext
-                let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                     managedObjectContext: context,
-                                                     sectionNameKeyPath: nil,
-                                                     cacheName: nil)
-                frc.delegate = self
-                do {
-                    try frc.performFetch()
-                } catch {
-                    NSLog("Error doing frc fetch")
-                }
-                return frc
-            } ()
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.person = {
+            let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+            let context = CoreDataStack.shared.mainContext
+            return try? context.fetch(fetchRequest).first
+        } ()
         
-        if let person = fetchedResultsController?.fetchedObjects?.first {
+        if let person = person {
             
             nameLabel.text = person.name
             gitLabel.text = person.github
@@ -85,7 +100,6 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         } else {
             performSegue(withIdentifier: "SettingSegue", sender: self)
         }
-        
         self.tableView.reloadData()
     }
     
@@ -94,19 +108,17 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         case "SettingSegue":
             guard let settingVC = segue.destination as? PersonInfoEditViewController else {return}
             settingVC.personController = personController
-            if let person = fetchedResultsController?.fetchedObjects?.first {
+            if let person = person {
                 settingVC.person = person
             }
             
         case "PinnedProjectSegue":
             guard let pinnedVC = segue.destination as? ProjectViewController, let indexPath = tableView.indexPathForSelectedRow else {return}
-            if let projects = fetchedResultsController?.fetchedObjects?.first?.projects {
-                let allProject: [Project] = projects.allObjects as! [Project]
-                let filtered = allProject.filter({$0.pinned == true})
-                
-                pinnedVC.project = filtered[indexPath.row]
+            if let projects = fetchProjectController.fetchedObjects {
+    
+                pinnedVC.project = projects[indexPath.row]
             }
-            pinnedVC.person = fetchedResultsController?.fetchedObjects?.first
+            pinnedVC.person = person
             pinnedVC.personController = personController
         default:
             break
