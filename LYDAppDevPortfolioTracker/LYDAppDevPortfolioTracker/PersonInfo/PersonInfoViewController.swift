@@ -110,6 +110,7 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
             settingVC.personController = personController
             if let person = person {
                 settingVC.person = person
+                //imageView.image = settingVC.imageView.image
             }
             
         case "PinnedProjectSegue":

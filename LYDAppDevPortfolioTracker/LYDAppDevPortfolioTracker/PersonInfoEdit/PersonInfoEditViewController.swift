@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData
+
 
 class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +21,12 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     
     func updateViews() {
         if let person = person, isViewLoaded {
+            if person.image == nil {
+                imageView.image = #imageLiteral(resourceName: "default")
+            } else {
+                
+                imageView.image = UIImage(contentsOfFile: person.image!)
+            }
             name.text = person.name
             github.text = person.github
             introduction.text = person.introduction ?? ""
@@ -44,6 +52,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet var github: UITextField!
     @IBOutlet var introduction: UITextView!
     
+    @IBOutlet var chooseImageButton: UIButton!
     @IBOutlet var edit: UIBarButtonItem!
     @IBOutlet var imageView: UIImageView!
     
@@ -52,7 +61,39 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
         if didSetImage == true {
             if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 imageView.image = pickedImage
+                imageView.contentMode = .scaleAspectFit
+                let fm = FileManager.default
+                let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+                let docPath = docURL.path
+                let filePath = docURL.appendingPathComponent("profilePicture.png")
+                
+                do {
+                    let files = try fm.contentsOfDirectory(atPath: "\(docPath)")
+                    for file in files {
+                        if "\(docPath)/\(file)" == filePath.path {
+                            try fm.removeItem(atPath: filePath.path)
+                        }
+                    }
+                } catch {
+                    NSLog("Adding Image failed.")
+                }
+                
+                do {
+                    if let pngData = pickedImage.pngData() {
+                        try pngData.write(to: filePath, options: .atomic)
+                    }
+                } catch {
+                   NSLog("Writing image to file path failed")
+                }
+                
+                person?.image = filePath.path
+                do {
+                    try CoreDataStack.shared.save()
+                } catch {
+                    NSLog("setting person pic failed.")
+                }
                 didSetImage = false
+                
             }
         }
         dismiss(animated: true, completion: nil)
@@ -99,5 +140,4 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
         //        navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
-    
 }

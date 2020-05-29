@@ -75,5 +75,4 @@ class PersonController {
             NSLog("Delete project failed")
         }
     }
-
 }
