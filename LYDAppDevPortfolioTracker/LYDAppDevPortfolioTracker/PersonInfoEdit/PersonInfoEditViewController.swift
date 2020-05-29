@@ -12,6 +12,8 @@ import CoreData
 
 class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+     private var imagePath: String?
+    
     var personController: PersonController?
     var person: Person? {
         didSet {
@@ -86,12 +88,8 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                    NSLog("Writing image to file path failed")
                 }
                 
-                person?.image = filePath.path
-                do {
-                    try CoreDataStack.shared.save()
-                } catch {
-                    NSLog("setting person pic failed.")
-                }
+                imagePath = filePath.path
+                
                 didSetImage = false
                 
             }
@@ -132,9 +130,9 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             
             if let person = person {
                 
-                personController.updatePerson(person: person, name: name, intro: intro, github: github)
+                personController.updatePerson(person: person, name: name, intro: intro, github: github, imagePath: imagePath)
             } else {
-                personController.createPerson(name: name, github: github, intro: intro)
+                personController.createPerson(name: name, github: github, intro: intro, imagePath: imagePath)
             }
         }
         //        navigationController?.popViewController(animated: true)

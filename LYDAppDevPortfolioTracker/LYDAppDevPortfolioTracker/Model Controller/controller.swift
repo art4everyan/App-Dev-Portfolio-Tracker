@@ -31,12 +31,12 @@ class PersonController {
         }
     }
     
-    func updatePerson(person: Person, name: String, intro: String, github: String) {
+    func updatePerson(person: Person, name: String, intro: String, github: String, imagePath: String?) {
         
         person.name = name
         person.introduction = intro
         person.github = github
-        
+        person.image = imagePath
         
         do {
             try CoreDataStack.shared.save()
@@ -44,9 +44,10 @@ class PersonController {
             NSLog("Saving person change failed")
         }
     }
-    func createPerson(name: String, github: String, intro: String?) {
+    func createPerson(name: String, github: String, intro: String?, imagePath: String?) {
         
-        let _ = Person(name: name, github: github, introduction: intro ?? "")
+        let person = Person(name: name, github: github, introduction: intro ?? "")
+        person.image = imagePath
         do {
             try CoreDataStack.shared.save()
         } catch {
@@ -57,6 +58,7 @@ class PersonController {
         
         
         let project = Project(name: name, github: github, introduction: intro ?? "", languages: languages, pinned: pinned)
+        
         person.addToProjects(project)
         
         

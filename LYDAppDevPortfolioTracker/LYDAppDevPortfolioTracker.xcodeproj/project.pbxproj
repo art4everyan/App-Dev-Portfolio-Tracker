@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136CD0A935FE0CFE22AAEAC7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */; };
 		AE504D6C247D4F17006EBF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6B247D4F17006EBF13 /* AppDelegate.swift */; };
 		AE504D6E247D4F17006EBF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */; };
 		AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE504D71247D4F17006EBF13 /* Main.storyboard */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E53EC685B757809C6434862 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.release.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.release.xcconfig"; sourceTree = "<group>"; };
+		A77D562D99F097574B8A3298 /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AE504D68247D4F17006EBF13 /* LYDAppDevPortfolioTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYDAppDevPortfolioTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE504D6B247D4F17006EBF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		AE504D93247DD859006EBF13 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		AE504D95247DDB10006EBF13 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
 		AE504D97247DFB0A006EBF13 /* controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controller.swift; sourceTree = "<group>"; };
+		B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYDAppDevPortfolioTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136CD0A935FE0CFE22AAEAC7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71709BF285515726C6532EE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A77D562D99F097574B8A3298 /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */,
+				3E53EC685B757809C6434862 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		96849ECE6BFA621BDD03EFFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE504D5F247D4F17006EBF13 = {
 			isa = PBXGroup;
 			children = (
 				AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */,
 				AE504D69247D4F17006EBF13 /* Products */,
+				71709BF285515726C6532EE7 /* Pods */,
+				96849ECE6BFA621BDD03EFFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +167,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE504D7C247D4F18006EBF13 /* Build configuration list for PBXNativeTarget "LYDAppDevPortfolioTracker" */;
 			buildPhases = (
+				AEE4B6BD2480D4CA007B1E37 /* ShellScript */,
+				C562EB07742C9E0B229FCBB9 /* [CP] Check Pods Manifest.lock */,
 				AE504D64247D4F17006EBF13 /* Sources */,
 				AE504D65247D4F17006EBF13 /* Frameworks */,
 				AE504D66247D4F17006EBF13 /* Resources */,
@@ -201,6 +227,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AEE4B6BD2480D4CA007B1E37 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		C562EB07742C9E0B229FCBB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LYDAppDevPortfolioTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE504D64247D4F17006EBF13 /* Sources */ = {
@@ -358,6 +426,7 @@
 		};
 		AE504D7D247D4F18006EBF13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A77D562D99F097574B8A3298 /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +444,7 @@
 		};
 		AE504D7E247D4F18006EBF13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E53EC685B757809C6434862 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
