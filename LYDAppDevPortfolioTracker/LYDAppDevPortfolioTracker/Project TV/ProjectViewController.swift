@@ -37,6 +37,7 @@ class ProjectViewController: UIViewController {
     }
     
     func updateViews() {
+        
         if let project = project, isViewLoaded {
             languages.text = project.languages
             languages.isUserInteractionEnabled = false
