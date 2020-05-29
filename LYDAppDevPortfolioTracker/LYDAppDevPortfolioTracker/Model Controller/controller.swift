@@ -17,18 +17,15 @@ class PersonController {
     
     func updateProjects(project: Project, name: String, intro: String?, pinned: Bool, languages: String, github: String){
         
-        let context = CoreDataStack.shared.container.newBackgroundContext()
+        project.name = name
+        project.introduction = intro ?? ""
+        project.pinned = pinned
+        project.languages = languages
+        project.github = github
         
-        context.performAndWait {
-            project.name = name
-            project.introduction = intro ?? ""
-            project.pinned = pinned
-            project.languages = languages
-            project.github = github
-        }
         
         do {
-            try CoreDataStack.shared.save(context: context)
+            try CoreDataStack.shared.save()
         } catch {
             NSLog("Saving project change failed")
         }
@@ -36,16 +33,13 @@ class PersonController {
     
     func updatePerson(person: Person, name: String, intro: String, github: String) {
         
-        let context = CoreDataStack.shared.container.newBackgroundContext()
+        person.name = name
+        person.introduction = intro
+        person.github = github
         
-        context.performAndWait {
-            person.name = name
-            person.introduction = intro
-            person.github = github
-        }
         
         do {
-            try CoreDataStack.shared.save(context: context)
+            try CoreDataStack.shared.save()
         } catch {
             NSLog("Saving person change failed")
         }

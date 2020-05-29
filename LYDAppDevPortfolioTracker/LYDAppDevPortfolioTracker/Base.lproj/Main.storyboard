@@ -313,6 +313,13 @@
                                     <constraint firstAttribute="width" constant="180" id="z1x-fb-QNB"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQT-Js-ka0">
+                                <rect key="frame" x="9.5" y="163" width="161" height="30"/>
+                                <state key="normal" title="Choose profile picture.."/>
+                                <connections>
+                                    <action selector="choosePicTapped:" destination="j9N-nn-1ki" eventType="touchUpInside" id="Ob1-Ah-8cn"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-rL-Rig">
                                 <rect key="frame" x="10" y="448" width="394" height="80"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,7 +331,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="goBackTapped:" destination="j9N-nn-1ki" eventType="touchUpInside" id="TeE-91-Xvf"/>
+                                    <action selector="goBackTapped:" destination="j9N-nn-1ki" eventType="touchUpInside" id="Ybd-lO-FsW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -336,7 +343,9 @@
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="leading" secondItem="Lrv-gd-Hzo" secondAttribute="leading" id="6Ct-7t-Ben"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="8I0-yB-nqE" secondAttribute="trailing" constant="10" id="8Rp-V3-nrg"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="ErM-Cy-CbX" secondAttribute="trailing" id="8Ss-5l-wJL"/>
+                            <constraint firstItem="uQT-Js-ka0" firstAttribute="centerY" secondItem="5zD-Ge-mrs" secondAttribute="centerY" id="GeT-Xk-yrg"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" id="Kcf-hU-BP4"/>
+                            <constraint firstItem="uQT-Js-ka0" firstAttribute="centerX" secondItem="5zD-Ge-mrs" secondAttribute="centerX" id="SHi-fQ-xAh"/>
                             <constraint firstItem="I5u-rL-Rig" firstAttribute="top" secondItem="bzc-cu-3G7" secondAttribute="bottom" constant="50" id="SQu-c8-yOG"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="TX9-xr-gbN" secondAttribute="trailing" constant="10" id="VnH-gH-CPS"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="bzc-cu-3G7" secondAttribute="trailing" constant="10" id="Vna-kY-oUb"/>

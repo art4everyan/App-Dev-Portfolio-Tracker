@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonInfoEditViewController: UIViewController {
+class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var personController: PersonController?
     var person: Person? {
@@ -47,6 +47,16 @@ class PersonInfoEditViewController: UIViewController {
     @IBOutlet var edit: UIBarButtonItem!
     @IBOutlet var imageView: UIImageView!
     
+    var didSetImage: Bool = false
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any] ) {
+        if didSetImage == true {
+            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                imageView.image = pickedImage
+                didSetImage = false
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +69,17 @@ class PersonInfoEditViewController: UIViewController {
         edit.title = ""
         edit.isEnabled = false
     }
-    
+
+    @IBAction func choosePicTapped(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = true
+            didSetImage = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
     @IBAction func goBackTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

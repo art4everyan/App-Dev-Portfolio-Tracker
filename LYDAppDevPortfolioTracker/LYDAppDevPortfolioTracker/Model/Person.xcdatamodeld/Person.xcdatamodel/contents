@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G4032" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G5033" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Person" representedClassName=".Person" syncable="YES" codeGenerationType="class">
         <attribute name="github" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="introduction" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
@@ -16,7 +17,7 @@
         <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="projects" inverseEntity="Person"/>
     </entity>
     <elements>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="133"/>
         <element name="Project" positionX="-54" positionY="18" width="128" height="133"/>
     </elements>
 </model>
