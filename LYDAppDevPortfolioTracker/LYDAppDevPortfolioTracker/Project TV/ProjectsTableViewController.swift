@@ -36,24 +36,6 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return frc
     }()
     
-//    lazy var fetchedResultsController: NSFetchedResultsController<Person> = {
-//        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
-//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-//            let context = CoreDataStack.shared.mainContext
-//            let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-//                                                 managedObjectContext: context,
-//                                                 sectionNameKeyPath: nil,
-//                                                 cacheName: nil)
-//            frc.delegate = self
-//            do {
-//                try frc.performFetch()
-//            } catch {
-//                NSLog("Error doing frc fetch")
-//            }
-//            return frc
-//    } ()
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

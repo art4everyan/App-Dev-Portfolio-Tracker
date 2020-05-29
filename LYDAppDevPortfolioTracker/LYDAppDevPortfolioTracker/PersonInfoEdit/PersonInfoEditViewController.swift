@@ -24,7 +24,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             if person.image == nil {
                 imageView.image = #imageLiteral(resourceName: "default")
             } else {
-                
+
                 imageView.image = UIImage(contentsOfFile: person.image!)
             }
             name.text = person.name

@@ -92,6 +92,9 @@ class ProjectViewController: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func goBacktapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func addTapped(_ sender: Any) {
     }

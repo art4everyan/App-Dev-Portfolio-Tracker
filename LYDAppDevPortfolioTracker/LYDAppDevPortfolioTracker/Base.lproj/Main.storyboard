@@ -206,6 +206,9 @@
                                 <state key="normal" title="Go Back/Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="goBacktapped:" destination="peE-CN-Nj6" eventType="touchUpInside" id="Gdv-VO-XnY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
