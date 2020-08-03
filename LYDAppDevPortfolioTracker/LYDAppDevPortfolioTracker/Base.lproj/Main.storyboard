@@ -141,14 +141,14 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro &amp; Updates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-9i-Xk4">
-                                <rect key="frame" x="20" y="344" width="136" height="24"/>
+                                <rect key="frame" x="20" y="344" width="145.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mgv-Ek-3Os">
                                 <rect key="frame" x="20" y="388" width="374" height="374"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -159,7 +159,7 @@
                             <constraint firstItem="Y2h-G3-GNP" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="20" id="7dv-7W-2Uw"/>
                             <constraint firstItem="bhs-zH-bAd" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="20" id="7iP-Ly-f0L"/>
                             <constraint firstItem="6pZ-PM-qrj" firstAttribute="top" secondItem="bhs-zH-bAd" secondAttribute="bottom" constant="40" id="8oH-Zr-d5w"/>
-                            <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" secondItem="V8a-9i-Xk4" secondAttribute="trailing" constant="258" id="CBX-A6-1J1"/>
+                            <constraint firstItem="Ve3-H4-t9B" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="V8a-9i-Xk4" secondAttribute="trailing" constant="258" id="CBX-A6-1J1"/>
                             <constraint firstItem="Ve3-H4-t9B" firstAttribute="bottom" secondItem="mgv-Ek-3Os" secondAttribute="bottom" constant="100" id="Oob-zG-pWG"/>
                             <constraint firstItem="V8a-9i-Xk4" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="20" id="U6n-4N-gRb"/>
                             <constraint firstItem="79T-3V-PEG" firstAttribute="leading" secondItem="Ve3-H4-t9B" secondAttribute="leading" constant="20" id="V7M-p0-mk9"/>
