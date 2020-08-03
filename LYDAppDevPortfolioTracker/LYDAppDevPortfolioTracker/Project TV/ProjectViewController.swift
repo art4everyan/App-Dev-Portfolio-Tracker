@@ -49,7 +49,7 @@ class ProjectViewController: UIViewController {
             introAndUpdate.isUserInteractionEnabled = false
             pinnedSwitch.isOn = project.pinned
             pinnedSwitch.isUserInteractionEnabled = false
-            
+            addButton.layer.cornerRadius = 20
             edit.isEnabled = true
             
         } else if isViewLoaded {

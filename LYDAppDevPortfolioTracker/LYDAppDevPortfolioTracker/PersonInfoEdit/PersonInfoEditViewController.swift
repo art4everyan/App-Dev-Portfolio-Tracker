@@ -12,8 +12,8 @@ import CoreData
 
 class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-     private var imagePath: String?
-    
+    private var imagePath: String?
+    private var isEditPressed: Bool = false
     var personController: PersonController?
     var person: Person? {
         didSet {
@@ -22,29 +22,38 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     }
     
     func updateViews() {
+        
         if let person = person, isViewLoaded {
             if person.image == nil {
                 imageView.image = #imageLiteral(resourceName: "default")
             } else {
-
-                imageView.image = UIImage(contentsOfFile: person.image!)
+                let fm = FileManager.default
+                let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+                let filePath = docURL.appendingPathComponent("\(person.image!)")
+                //let x = filePath.path
+                imageView.image = UIImage(contentsOfFile: filePath.path)
             }
             name.text = person.name
             github.text = person.github
             introduction.text = person.introduction ?? ""
             name.isUserInteractionEnabled = false
             github.isUserInteractionEnabled = false
+            chooseImageButton.isUserInteractionEnabled = false
+            self.edit.title = "Edit"
             introduction.isUserInteractionEnabled = false
-            edit.isEnabled = true
+            introduction.layer.cornerRadius = 20
+            chooseImageButton.layer.cornerRadius = 5
         } else if isViewLoaded {
             name.text = ""
             github.text = ""
             introduction.text = ""
-            edit.title = ""
-            edit.isEnabled = false
+            self.edit.title = "Save"
             name.isUserInteractionEnabled = true
             introduction.isUserInteractionEnabled = true
+            chooseImageButton.isUserInteractionEnabled = true
             github.isUserInteractionEnabled = true
+            introduction.layer.cornerRadius = 20
+            chooseImageButton.layer.cornerRadius = 5
             name.becomeFirstResponder()
         }
     }
@@ -88,7 +97,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                    NSLog("Writing image to file path failed")
                 }
                 
-                imagePath = filePath.path
+                imagePath = "profilePicture.png"
                 
                 didSetImage = false
                 
@@ -102,11 +111,53 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
         updateViews()
     }
     @IBAction func editTapped(_ sender: Any) {
-        name.isUserInteractionEnabled = true
-        introduction.isUserInteractionEnabled = true
-        github.isUserInteractionEnabled = true
-        edit.title = ""
-        edit.isEnabled = false
+        if isEditPressed == false && self.edit.title == "Save" {
+            if let personController = personController {
+                guard let name = name.text, !name.isEmpty, let github = github.text, !github.isEmpty, let intro = introduction.text else {
+                    let alert = UIAlertController(title: "Saving failed", message: "Please fill out all required field", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Back", style: .default, handler: nil)
+                    alert.addAction(alertAction)
+                    self.present(alert, animated: true)
+                    return
+                }
+                
+                personController.createPerson(name: name, github: github, intro: intro, imagePath: imagePath)
+            }
+        } else {
+            isEditPressed.toggle()
+            if isEditPressed {
+                chooseImageButton.isUserInteractionEnabled = true
+                name.isUserInteractionEnabled = true
+                introduction.isUserInteractionEnabled = true
+                github.isUserInteractionEnabled = true
+                edit.title = "Save"
+            } else {
+
+                if let personController = personController {
+                    
+                    guard let name = name.text, !name.isEmpty, let github = github.text, !github.isEmpty, let intro = introduction.text else {
+                        let alert = UIAlertController(title: "Saving failed", message: "Please fill out all required field", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "Back", style: .default, handler: nil)
+                        alert.addAction(alertAction)
+                        self.present(alert, animated: true)
+                        isEditPressed = true
+                        return
+                    }
+                    
+                    if let person = person {
+                        
+                        personController.updatePerson(person: person, name: name, intro: intro, github: github, imagePath: imagePath)
+                    }
+                    
+                }
+                name.isUserInteractionEnabled = false
+                introduction.isUserInteractionEnabled = false
+                github.isUserInteractionEnabled = false
+                chooseImageButton.isUserInteractionEnabled = false
+                edit.title = "Edit"
+            }
+        }
+        
     }
 
     @IBAction func choosePicTapped(_ sender: Any) {
@@ -121,21 +172,5 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     }
     @IBAction func goBackTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func saveTapped(_ sender: Any) {
-        if let personController = personController {
-            
-            guard let name = name.text, !name.isEmpty, let github = github.text, !github.isEmpty, let intro = introduction.text else {return}
-            
-            if let person = person {
-                
-                personController.updatePerson(person: person, name: name, intro: intro, github: github, imagePath: imagePath)
-            } else {
-                personController.createPerson(name: name, github: github, intro: intro, imagePath: imagePath)
-            }
-        }
-        //        navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
     }
 }

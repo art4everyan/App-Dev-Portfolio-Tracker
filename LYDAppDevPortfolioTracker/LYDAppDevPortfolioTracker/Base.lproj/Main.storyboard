@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--All Projects-->
+        <!--Projects-->
         <scene sceneID="dTp-Bo-7QX">
             <objects>
                 <viewController id="Z13-Zw-lUX" customClass="ProjectsTableViewController" customModule="LYDAppDevPortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2eL-dz-VdQ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All Projects" image="folder" catalog="system" id="f8E-xh-thc"/>
+                    <tabBarItem key="tabBarItem" title="Projects" image="folder" catalog="system" id="f8E-xh-thc"/>
                     <connections>
                         <outlet property="tableView" destination="7Q2-WW-B1B" id="xRl-tY-b3M"/>
                     </connections>
@@ -272,18 +272,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8I0-yB-nqE">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name(required): " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8I0-yB-nqE">
                                 <rect key="frame" x="190" y="108" width="214" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub Handle:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TX9-xr-gbN">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="GitHub(required):" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TX9-xr-gbN">
                                 <rect key="frame" x="190" y="162" width="214" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-cu-3G7">
-                                <rect key="frame" x="10" y="278" width="394" height="120"/>
+                                <rect key="frame" x="10" y="318" width="394" height="120"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Cak-iL-TdU"/>
@@ -296,14 +296,14 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Settings" id="cam-cc-3wh">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="2cE-im-D9z">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="V3n-Th-jhT">
                                             <connections>
-                                                <action selector="editTapped:" destination="j9N-nn-1ki" id="rcD-iu-ngy"/>
+                                                <action selector="goBackTapped:" destination="j9N-nn-1ki" id="npa-dV-cyv"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="c1E-0r-ZMG">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="c1E-0r-ZMG">
                                             <connections>
-                                                <action selector="saveTapped:" destination="j9N-nn-1ki" id="0AR-YA-cTr"/>
+                                                <action selector="editTapped:" destination="j9N-nn-1ki" id="TkR-Wb-vLI"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -316,24 +316,12 @@
                                     <constraint firstAttribute="height" constant="180" id="q9K-5a-RM4"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5u-rL-Rig">
-                                <rect key="frame" x="10" y="448" width="394" height="80"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="394" id="eZG-mj-cut"/>
-                                    <constraint firstAttribute="height" constant="80" id="irg-Ly-uuk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <state key="normal" title="Go Back/Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="goBackTapped:" destination="j9N-nn-1ki" eventType="touchUpInside" id="Ybd-lO-FsW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQT-Js-ka0">
                                 <rect key="frame" x="192" y="216" width="211" height="30"/>
-                                <state key="normal" title="Choose/Change Profile Picture"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Choose/Change Profile Picture">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="choosePicTapped:" destination="j9N-nn-1ki" eventType="touchUpInside" id="Ob1-Ah-8cn"/>
                                 </connections>
@@ -346,11 +334,9 @@
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" id="7uy-sP-Zvi"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="TX9-xr-gbN" secondAttribute="trailing" constant="10" id="C5E-Fk-N4z"/>
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="trailing" secondItem="8sv-H1-rhy" secondAttribute="trailing" id="LBi-Dh-B7Y"/>
-                            <constraint firstItem="I5u-rL-Rig" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="Mrm-n5-hfC"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="bzc-cu-3G7" secondAttribute="trailing" constant="10" id="Nxo-Ku-ceB"/>
                             <constraint firstItem="uQT-Js-ka0" firstAttribute="top" secondItem="TX9-xr-gbN" secondAttribute="bottom" constant="20" id="Thr-GR-lzz"/>
                             <constraint firstItem="TX9-xr-gbN" firstAttribute="top" secondItem="8I0-yB-nqE" secondAttribute="bottom" constant="20" id="WRO-lb-r98"/>
-                            <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="I5u-rL-Rig" secondAttribute="trailing" constant="10" id="X7F-iG-7G2"/>
                             <constraint firstItem="8I0-yB-nqE" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="10" id="XEP-CS-tA6"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" id="ZhL-8q-kQG"/>
                             <constraint firstItem="8I0-yB-nqE" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" constant="20" id="c8W-zh-ldT"/>
@@ -359,8 +345,7 @@
                             <constraint firstItem="uQT-Js-ka0" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="12" id="laU-v1-bUq"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" id="qW2-H7-PbR"/>
                             <constraint firstItem="TX9-xr-gbN" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="10" id="sVU-dX-lFo"/>
-                            <constraint firstItem="bzc-cu-3G7" firstAttribute="top" secondItem="5zD-Ge-mrs" secondAttribute="bottom" constant="10" id="te9-YJ-lT4"/>
-                            <constraint firstItem="I5u-rL-Rig" firstAttribute="top" secondItem="bzc-cu-3G7" secondAttribute="bottom" constant="50" id="thR-TQ-Hrd"/>
+                            <constraint firstItem="bzc-cu-3G7" firstAttribute="top" secondItem="5zD-Ge-mrs" secondAttribute="bottom" constant="50" id="te9-YJ-lT4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8sv-H1-rhy"/>
                     </view>
@@ -368,7 +353,7 @@
                     <navigationItem key="navigationItem" id="R5t-RE-fmP"/>
                     <connections>
                         <outlet property="chooseImageButton" destination="uQT-Js-ka0" id="n1y-vg-FIU"/>
-                        <outlet property="edit" destination="2cE-im-D9z" id="Qf6-mV-out"/>
+                        <outlet property="edit" destination="c1E-0r-ZMG" id="tPo-07-sil"/>
                         <outlet property="github" destination="TX9-xr-gbN" id="Peu-GD-hTE"/>
                         <outlet property="imageView" destination="5zD-Ge-mrs" id="68P-Um-VJh"/>
                         <outlet property="introduction" destination="bzc-cu-3G7" id="8Z5-Pp-OrR"/>
@@ -539,6 +524,6 @@
         <image name="gear" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j0z-Ew-gkq"/>
+        <segue reference="2qS-xp-i5F"/>
     </inferredMetricsTieBreakers>
 </document>
