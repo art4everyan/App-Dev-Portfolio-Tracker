@@ -41,7 +41,7 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let x = fetchProjectController.sections?[section].numberOfObjects
+        //let x = fetchProjectController.sections?[section].numberOfObjects
         return fetchProjectController.sections?[section].numberOfObjects ?? 0
     }
     

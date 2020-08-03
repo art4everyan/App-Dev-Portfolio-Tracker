@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
-class ProjectViewController: UIViewController {
-    
+class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+
+    private var isEditPressed: Bool = false
     var personController: PersonController?
     var project: Project? {
         didSet {
@@ -25,10 +27,8 @@ class ProjectViewController: UIViewController {
     @IBOutlet var githubAddress: UITextField!
     @IBOutlet var pinnedSwitch: UISwitch!
     @IBOutlet var introAndUpdate: UITextView!
-    @IBOutlet var addButton: UIButton!
-    @IBOutlet var edit: UIBarButtonItem!
     @IBOutlet var save: UIBarButtonItem!
-    @IBOutlet var collectionView: UICollectionView!
+ 
     
     
     override func viewDidLoad() {
@@ -49,9 +49,9 @@ class ProjectViewController: UIViewController {
             introAndUpdate.isUserInteractionEnabled = false
             pinnedSwitch.isOn = project.pinned
             pinnedSwitch.isUserInteractionEnabled = false
-            addButton.layer.cornerRadius = 20
-            edit.isEnabled = true
-            
+            introAndUpdate.layer.cornerRadius = 20
+            save.isEnabled = true
+            self.save.title = "Edit"
         } else if isViewLoaded {
             languages.text = ""
             languages.isUserInteractionEnabled = true
@@ -62,8 +62,9 @@ class ProjectViewController: UIViewController {
             introAndUpdate.text = ""
             introAndUpdate.isUserInteractionEnabled = true
             pinnedSwitch.isUserInteractionEnabled = true
-            edit.isEnabled = false
-            edit.title = ""
+            save.isEnabled = true
+            introAndUpdate.layer.cornerRadius = 20
+            self.save.title = "Save"
             projectName.becomeFirstResponder()
         }
     }
@@ -72,32 +73,53 @@ class ProjectViewController: UIViewController {
         isOn.toggle()
         pinnedSwitch.setOn(isOn, animated: true)
     }
-    @IBAction func editTapped(_ sender: Any) {
-        languages.isUserInteractionEnabled = true
-        projectName.isUserInteractionEnabled = true
-        githubAddress.isUserInteractionEnabled = true
-        introAndUpdate.isUserInteractionEnabled = true
-        pinnedSwitch.isUserInteractionEnabled = true
-        edit.isEnabled = false
-        edit.title = ""
-    }
+
     
     @IBAction func saveTapped(_ sender: Any) {
-        if let personController = personController, let person = person {
-            guard let languages = languages.text, !languages.isEmpty, let name = projectName.text, !name.isEmpty, let github = githubAddress.text, !github.isEmpty else {return}
-            if let project = project {
-                personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: pinnedSwitch.isOn, languages: languages, github: github)
-            } else {
+        if isEditPressed == false && self.save.title == "Save" {
+            if let personController = personController, let person = person {
+                guard let languages = languages.text, !languages.isEmpty, let name = projectName.text, !name.isEmpty, let github = githubAddress.text, !github.isEmpty else {
+                    let alert = UIAlertController(title: "Saving failed", message: "Please fill out all required field", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Back", style: .default, handler: nil)
+                    alert.addAction(alertAction)
+                    self.present(alert, animated: true)
+                    return
+                }
                 personController.createProject(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
             }
+        } else {
+            isEditPressed.toggle()
+            if isEditPressed {
+                projectName.isUserInteractionEnabled = true
+                githubAddress.isUserInteractionEnabled = true
+                languages.isUserInteractionEnabled = true
+                introAndUpdate.isUserInteractionEnabled = true
+                pinnedSwitch.isUserInteractionEnabled = true
+                save.title = "Save"
+            } else {
+                if let personController = personController {
+                    guard let languages = languages.text, !languages.isEmpty, let name = projectName.text, !name.isEmpty, let github = githubAddress.text, !github.isEmpty else {
+                        let alert = UIAlertController(title: "Saving failed", message: "Please fill out all required field", preferredStyle: .alert)
+                        let alertAction = UIAlertAction(title: "Back", style: .default, handler: nil)
+                        alert.addAction(alertAction)
+                        self.present(alert, animated: true)
+                        return
+                    }
+                    if let project = project {
+                        personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                    }
+                }
+                projectName.isUserInteractionEnabled = false
+                githubAddress.isUserInteractionEnabled = false
+                languages.isUserInteractionEnabled = false
+                introAndUpdate.isUserInteractionEnabled = false
+                pinnedSwitch.isUserInteractionEnabled = false
+                save.title = "Edit"
+            }
         }
-        dismiss(animated: true, completion: nil)
     }
     @IBAction func goBacktapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func addTapped(_ sender: Any) {
     }
     
 }
