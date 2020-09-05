@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Person" representedClassName=".Person" syncable="YES" codeGenerationType="class">
+        <attribute name="github" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="introduction" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="password" attributeType="String"/>
+        <attribute name="username" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="person" inverseEntity="Project"/>
+    </entity>
+    <entity name="Project" representedClassName=".Project" syncable="YES" codeGenerationType="class">
+        <attribute name="github" attributeType="String"/>
+        <attribute name="introduction" optional="YES" attributeType="String"/>
+        <attribute name="languages" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="pinned" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="person" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="projects" inverseEntity="Person"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Project" positionX="-54" positionY="18" width="128" height="133"/>
+    </elements>
+</model>

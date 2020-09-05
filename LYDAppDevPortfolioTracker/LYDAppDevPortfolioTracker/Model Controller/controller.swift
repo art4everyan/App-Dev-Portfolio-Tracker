@@ -46,7 +46,7 @@ class PersonController {
     }
     func createPerson(name: String, github: String, intro: String?, imagePath: String?) {
         
-        let person = Person(name: name, github: github, introduction: intro ?? "")
+        let person = Person(name: name, github: github, introduction: intro, image: imagePath, username: "", password: "")
         person.image = imagePath
         do {
             try CoreDataStack.shared.save()
