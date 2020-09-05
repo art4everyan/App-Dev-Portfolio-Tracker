@@ -26,18 +26,10 @@ class LoginViewController: UIViewController {
     @IBAction func signupTapped(_ sender: Any) {
     }
     @IBAction func signinTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "LoginSegue", sender: nil)
     }
     @IBAction func guestTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "GuestSegue", sender: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

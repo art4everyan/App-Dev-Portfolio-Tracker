@@ -60,7 +60,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signinTapped:" destination="e6E-oQ-fPC" eventType="touchUpInside" id="RoX-sY-aJc"/>
-                                    <segue destination="Qy8-uV-rCk" kind="presentation" id="wPn-Rm-tZb"/>
+                                    <segue destination="Qy8-uV-rCk" kind="presentation" identifier="LoginSegue" id="wPn-Rm-tZb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1j4-7Z-yp7">
@@ -74,7 +74,7 @@
                                 </state>
                                 <connections>
                                     <action selector="guestTapped:" destination="e6E-oQ-fPC" eventType="touchUpInside" id="U1x-5C-QES"/>
-                                    <segue destination="Qy8-uV-rCk" kind="presentation" id="3ei-nU-P1B"/>
+                                    <segue destination="Qy8-uV-rCk" kind="presentation" identifier="GuestSegue" id="3ei-nU-P1B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOO-Lz-a2b">
@@ -149,6 +149,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3ei-nU-P1B"/>
+        <segue reference="wPn-Rm-tZb"/>
     </inferredMetricsTieBreakers>
 </document>
