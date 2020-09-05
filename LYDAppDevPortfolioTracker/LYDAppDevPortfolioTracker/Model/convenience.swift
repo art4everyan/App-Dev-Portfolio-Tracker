@@ -14,13 +14,15 @@ extension Person {
     
     //@NSManaged var projects: [Project]?
     
-    @discardableResult convenience init(uuid: UUID = UUID(), name: String, github: String, introduction:String?, image: String? = "", context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init(uuid: UUID = UUID(), name: String, github: String, introduction:String?, image: String? = "", username: String? = "", password: String? = "", context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.uuid = uuid
         self.name = name
         self.introduction = introduction
         self.github = github
         self.image = image
+        self.username = username
+        self.password = password
     }
 }
 
