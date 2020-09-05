@@ -17,7 +17,7 @@ struct PersonRepresentation: Codable {
     var image: String?
 }
 
-struct ProjectPepresentation: Codable {
+struct ProjectRepresentation: Codable {
     var name: String
     var github: String
     var introduction: String?

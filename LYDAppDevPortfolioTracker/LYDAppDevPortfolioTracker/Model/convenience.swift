@@ -17,9 +17,7 @@ extension Person {
             let username = username,
             let password = password,
             let github = github,
-            let name = name,
-            let introduction = introduction,
-            let image = image else {return nil}
+            let name = name else {return nil}
         return PersonRepresentation(uuid: uuid,
                                     username: username,
                                     password: password,
@@ -66,14 +64,27 @@ extension Person {
 
 extension Project {
     
+    var projectRepresentation: ProjectRepresentation? {
+        guard let name = name, let github = github, let language = languages else { return nil }
+        return ProjectRepresentation(name: name, github: github, introduction: introduction, languages: language, pinned: pinned)
+    }
     
     @discardableResult convenience init(name: String, github: String, introduction: String?, languages: String, pinned: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
-
         self.name = name
         self.introduction = introduction
         self.languages = languages
         self.pinned = pinned
         self.github = github
+    }
+    
+    @discardableResult convenience init?(representation: ProjectRepresentation,
+                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        self.init(name: representation.name,
+                  github: representation.github,
+                  introduction: representation.introduction,
+                  languages: representation.languages,
+                  pinned: representation.pinned,
+                  context: context)
     }
 }
