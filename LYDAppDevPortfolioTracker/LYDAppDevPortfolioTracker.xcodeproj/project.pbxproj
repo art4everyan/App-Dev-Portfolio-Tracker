@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		136CD0A935FE0CFE22AAEAC7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */; };
+		AE2D3D88250406CC00DAF921 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2D3D87250406CC00DAF921 /* Login.storyboard */; };
 		AE504D6C247D4F17006EBF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6B247D4F17006EBF13 /* AppDelegate.swift */; };
 		AE504D6E247D4F17006EBF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */; };
 		AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE504D71247D4F17006EBF13 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		3E53EC685B757809C6434862 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.release.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.release.xcconfig"; sourceTree = "<group>"; };
 		A77D562D99F097574B8A3298 /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		AE2D3D87250406CC00DAF921 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		AE504D68247D4F17006EBF13 /* LYDAppDevPortfolioTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYDAppDevPortfolioTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE504D6B247D4F17006EBF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */ = {
 			isa = PBXGroup;
 			children = (
+				AE2D3D87250406CC00DAF921 /* Login.storyboard */,
 				AE504D82247DBFE0006EBF13 /* Model */,
 				AE504D71247D4F17006EBF13 /* Main.storyboard */,
 				AE504D99247DFB10006EBF13 /* Model Controller */,
@@ -220,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2D3D88250406CC00DAF921 /* Login.storyboard in Resources */,
 				AE504D78247D4F18006EBF13 /* LaunchScreen.storyboard in Resources */,
 				AE504D75247D4F18006EBF13 /* Assets.xcassets in Resources */,
 				AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */,
