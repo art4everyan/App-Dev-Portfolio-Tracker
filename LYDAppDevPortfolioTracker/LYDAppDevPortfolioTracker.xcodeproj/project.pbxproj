@@ -28,6 +28,7 @@
 		3E53EC685B757809C6434862 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.release.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.release.xcconfig"; sourceTree = "<group>"; };
 		A77D562D99F097574B8A3298 /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2D3D87250406CC00DAF921 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Person 2.xcdatamodel"; sourceTree = "<group>"; };
 		AE504D68247D4F17006EBF13 /* LYDAppDevPortfolioTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYDAppDevPortfolioTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE504D6B247D4F17006EBF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -495,9 +496,10 @@
 		AE504D83247DC01A006EBF13 /* Person.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */,
 				AE504D84247DC01A006EBF13 /* Person.xcdatamodel */,
 			);
-			currentVersion = AE504D84247DC01A006EBF13 /* Person.xcdatamodel */;
+			currentVersion = AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */;
 			path = Person.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
