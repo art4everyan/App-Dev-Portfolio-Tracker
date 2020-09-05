@@ -170,6 +170,10 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    @IBAction func shareTapped(_ sender: Any) {
+        
+    }
+    
     @IBAction func goBackTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

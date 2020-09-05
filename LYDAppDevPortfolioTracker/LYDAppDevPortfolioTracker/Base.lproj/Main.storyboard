@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lDm-qW-gVb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lDm-qW-gVb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -214,7 +214,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-cu-3G7">
-                                <rect key="frame" x="10" y="318" width="394" height="120"/>
+                                <rect key="frame" x="10" y="368" width="394" height="120"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Cak-iL-TdU"/>
@@ -247,8 +247,24 @@
                                     <constraint firstAttribute="height" constant="180" id="q9K-5a-RM4"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBi-4X-Q2N">
+                                <rect key="frame" x="10" y="338" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kaz-Hd-jdW">
+                                <rect key="frame" x="157" y="568" width="100" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareTapped:" destination="j9N-nn-1ki" eventType="touchUpInside" id="FK1-Tk-j0B"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQT-Js-ka0">
-                                <rect key="frame" x="192" y="216" width="211" height="30"/>
+                                <rect key="frame" x="101.5" y="293" width="211" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Choose/Change Profile Picture">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -260,23 +276,27 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="uQT-Js-ka0" secondAttribute="trailing" constant="11" id="0Qp-xf-PNl"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="8I0-yB-nqE" secondAttribute="trailing" constant="10" id="2J6-XX-M7c"/>
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" id="7uy-sP-Zvi"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="TX9-xr-gbN" secondAttribute="trailing" constant="10" id="C5E-Fk-N4z"/>
+                            <constraint firstItem="NBi-4X-Q2N" firstAttribute="top" secondItem="5zD-Ge-mrs" secondAttribute="bottom" constant="70" id="EfC-ab-YKo"/>
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="trailing" secondItem="8sv-H1-rhy" secondAttribute="trailing" id="LBi-Dh-B7Y"/>
+                            <constraint firstItem="uQT-Js-ka0" firstAttribute="top" secondItem="5zD-Ge-mrs" secondAttribute="bottom" constant="25" id="MAq-RN-ODo"/>
+                            <constraint firstItem="NBi-4X-Q2N" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="Mjs-Zd-gOy"/>
                             <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" secondItem="bzc-cu-3G7" secondAttribute="trailing" constant="10" id="Nxo-Ku-ceB"/>
-                            <constraint firstItem="uQT-Js-ka0" firstAttribute="top" secondItem="TX9-xr-gbN" secondAttribute="bottom" constant="20" id="Thr-GR-lzz"/>
+                            <constraint firstItem="Kaz-Hd-jdW" firstAttribute="top" secondItem="bzc-cu-3G7" secondAttribute="bottom" constant="80" id="Q5K-7G-oRF"/>
                             <constraint firstItem="TX9-xr-gbN" firstAttribute="top" secondItem="8I0-yB-nqE" secondAttribute="bottom" constant="20" id="WRO-lb-r98"/>
                             <constraint firstItem="8I0-yB-nqE" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="10" id="XEP-CS-tA6"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" id="ZhL-8q-kQG"/>
+                            <constraint firstItem="8sv-H1-rhy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NBi-4X-Q2N" secondAttribute="trailing" symbolic="YES" id="bJA-LI-oPV"/>
                             <constraint firstItem="8I0-yB-nqE" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" constant="20" id="c8W-zh-ldT"/>
+                            <constraint firstItem="uQT-Js-ka0" firstAttribute="centerX" secondItem="Lrv-gd-Hzo" secondAttribute="centerX" id="eED-We-HlB"/>
+                            <constraint firstItem="Kaz-Hd-jdW" firstAttribute="centerX" secondItem="Lrv-gd-Hzo" secondAttribute="centerX" id="h8u-80-EAr"/>
                             <constraint firstItem="ErM-Cy-CbX" firstAttribute="top" secondItem="8sv-H1-rhy" secondAttribute="top" id="hKZ-up-r1J"/>
                             <constraint firstItem="bzc-cu-3G7" firstAttribute="leading" secondItem="8sv-H1-rhy" secondAttribute="leading" constant="10" id="kob-oh-gIp"/>
-                            <constraint firstItem="uQT-Js-ka0" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="12" id="laU-v1-bUq"/>
                             <constraint firstItem="5zD-Ge-mrs" firstAttribute="top" secondItem="ErM-Cy-CbX" secondAttribute="bottom" id="qW2-H7-PbR"/>
                             <constraint firstItem="TX9-xr-gbN" firstAttribute="leading" secondItem="5zD-Ge-mrs" secondAttribute="trailing" constant="10" id="sVU-dX-lFo"/>
-                            <constraint firstItem="bzc-cu-3G7" firstAttribute="top" secondItem="5zD-Ge-mrs" secondAttribute="bottom" constant="50" id="te9-YJ-lT4"/>
+                            <constraint firstItem="bzc-cu-3G7" firstAttribute="top" secondItem="5zD-Ge-mrs" secondAttribute="bottom" constant="100" id="te9-YJ-lT4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8sv-H1-rhy"/>
                     </view>
@@ -449,12 +469,12 @@
             <point key="canvasLocation" x="-604" y="-75"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="doc.text.fill" catalog="system" width="56" height="64"/>
-        <image name="folder" catalog="system" width="64" height="46"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2qS-xp-i5F"/>
+        <segue reference="j0z-Ew-gkq"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="doc.text.fill" catalog="system" width="115" height="128"/>
+        <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+    </resources>
 </document>
