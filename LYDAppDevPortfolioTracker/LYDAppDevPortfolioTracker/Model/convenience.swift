@@ -31,7 +31,7 @@ extension Person {
 extension Project {
     
     
-    @discardableResult convenience init(name: String, github: String, introduction: String, languages: String, pinned: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init(name: String, github: String, introduction: String?, languages: String, pinned: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
 
         self.name = name
