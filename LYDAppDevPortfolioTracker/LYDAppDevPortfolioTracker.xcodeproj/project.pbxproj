@@ -10,6 +10,7 @@
 		136CD0A935FE0CFE22AAEAC7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */; };
 		AE2D3D88250406CC00DAF921 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2D3D87250406CC00DAF921 /* Login.storyboard */; };
 		AE2D3D8B25040FCF00DAF921 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D8A25040FCF00DAF921 /* Representation.swift */; };
+		AE2D3D8D25043D3600DAF921 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D8C25043D3600DAF921 /* LoginViewController.swift */; };
 		AE504D6C247D4F17006EBF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6B247D4F17006EBF13 /* AppDelegate.swift */; };
 		AE504D6E247D4F17006EBF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */; };
 		AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE504D71247D4F17006EBF13 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		AE2D3D87250406CC00DAF921 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Person 2.xcdatamodel"; sourceTree = "<group>"; };
 		AE2D3D8A25040FCF00DAF921 /* Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
+		AE2D3D8C25043D3600DAF921 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AE504D68247D4F17006EBF13 /* LYDAppDevPortfolioTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYDAppDevPortfolioTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE504D6B247D4F17006EBF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE2D3D8E25043D3F00DAF921 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AE2D3D8C25043D3600DAF921 /* LoginViewController.swift */,
+				AE2D3D87250406CC00DAF921 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		AE504D5F247D4F17006EBF13 = {
 			isa = PBXGroup;
 			children = (
@@ -99,7 +110,7 @@
 		AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */ = {
 			isa = PBXGroup;
 			children = (
-				AE2D3D87250406CC00DAF921 /* Login.storyboard */,
+				AE2D3D8E25043D3F00DAF921 /* Login */,
 				AE504D82247DBFE0006EBF13 /* Model */,
 				AE504D71247D4F17006EBF13 /* Main.storyboard */,
 				AE504D99247DFB10006EBF13 /* Model Controller */,
@@ -283,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2D3D8D25043D3600DAF921 /* LoginViewController.swift in Sources */,
 				AE504D94247DD859006EBF13 /* ProjectViewController.swift in Sources */,
 				AE504D98247DFB0A006EBF13 /* controller.swift in Sources */,
 				AE504D8E247DD3E2006EBF13 /* PersonInfoEditViewController.swift in Sources */,

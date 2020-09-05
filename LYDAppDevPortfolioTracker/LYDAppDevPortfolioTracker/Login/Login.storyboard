@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="FPA-NP-YIG">
             <objects>
-                <viewController id="e6E-oQ-fPC" sceneMemberID="viewController">
+                <viewController id="e6E-oQ-fPC" customClass="LoginViewController" customModule="LYDAppDevPortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ldE-7U-1sk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,6 +59,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="signinTapped:" destination="e6E-oQ-fPC" eventType="touchUpInside" id="RoX-sY-aJc"/>
                                     <segue destination="Qy8-uV-rCk" kind="presentation" id="wPn-Rm-tZb"/>
                                 </connections>
                             </button>
@@ -72,6 +73,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="guestTapped:" destination="e6E-oQ-fPC" eventType="touchUpInside" id="U1x-5C-QES"/>
                                     <segue destination="Qy8-uV-rCk" kind="presentation" id="3ei-nU-P1B"/>
                                 </connections>
                             </button>
@@ -84,6 +86,9 @@
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupTapped:" destination="e6E-oQ-fPC" eventType="touchUpInside" id="y4E-dZ-hOR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -104,6 +109,13 @@
                         <viewLayoutGuide key="safeArea" id="Can-pY-k83"/>
                     </view>
                     <navigationItem key="navigationItem" id="rTL-KP-013"/>
+                    <connections>
+                        <outlet property="password" destination="qa5-II-DJb" id="3uA-PR-5Kg"/>
+                        <outlet property="segmentBar" destination="obE-6e-qb5" id="8m7-6i-V6x"/>
+                        <outlet property="signinButton" destination="e3Y-Vb-Jwm" id="AIh-5f-DPB"/>
+                        <outlet property="signupButton" destination="GOO-Lz-a2b" id="OjQ-xC-bW3"/>
+                        <outlet property="username" destination="Rem-KM-Ybx" id="xpd-Zq-aPo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFn-rh-aFd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
