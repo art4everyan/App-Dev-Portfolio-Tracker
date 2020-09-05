@@ -5,8 +5,8 @@
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="introduction" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <attribute name="password" optional="YES" attributeType="String"/>
-        <attribute name="username" optional="YES" attributeType="String"/>
+        <attribute name="password" attributeType="String"/>
+        <attribute name="username" attributeType="String"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="person" inverseEntity="Project"/>
     </entity>

@@ -11,10 +11,32 @@ import CoreData
 import UIKit
 
 extension Person {
+   
+    var personRepresentation: PersonRepresentation? {
+        guard let uuid = uuid,
+            let username = username,
+            let password = password,
+            let github = github,
+            let name = name,
+            let introduction = introduction,
+            let image = image else {return nil}
+        return PersonRepresentation(uuid: uuid,
+                                    username: username,
+                                    password: password,
+                                    github: github,
+                                    name: name,
+                                    introduction: introduction,
+                                    image: image)
+    }
     
-    //@NSManaged var projects: [Project]?
-    
-    @discardableResult convenience init(uuid: UUID = UUID(), name: String, github: String, introduction:String?, image: String? = "", username: String? = "", password: String? = "", context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init(uuid: UUID = UUID(),
+                                        name: String,
+                                        github: String,
+                                        introduction:String?,
+                                        image: String?,
+                                        username: String,
+                                        password: String,
+                                        context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.uuid = uuid
         self.name = name
@@ -23,6 +45,20 @@ extension Person {
         self.image = image
         self.username = username
         self.password = password
+    }
+    
+    @discardableResult convenience init?(representation: PersonRepresentation,
+                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        
+        self.init(uuid: representation.uuid,
+                  name: representation.name,
+                  github: representation.github,
+                  introduction: representation.introduction,
+                  image: representation.image,
+                  username: representation.username,
+                  password: representation.password,
+                  context: context)
+        
     }
 }
 
