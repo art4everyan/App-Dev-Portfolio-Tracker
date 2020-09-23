@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import PDFKit
 
 class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -122,6 +122,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                 }
                 
                 personController.createPerson(name: name, github: github, intro: intro, imagePath: imagePath)
+                dismiss(animated: true, completion: nil)
             }
         } else {
             isEditPressed.toggle()
@@ -171,7 +172,17 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
         }
     }
     @IBAction func shareTapped(_ sender: Any) {
+        guard let person = person else { return }
+        guard let name = person.name,
+            !name.isEmpty,
+            let github = person.github,
+            !github.isEmpty,
+            let intro = person.introduction else {return}
         
+        let pdf = PDF(name: name, intro: intro, github: github)
+        let data = pdf.createPDF()
+        let activityVC = UIActivityViewController(activityItems: [data], applicationActivities: [])
+        present(activityVC, animated: true, completion: nil)
     }
     
     @IBAction func goBackTapped(_ sender: Any) {

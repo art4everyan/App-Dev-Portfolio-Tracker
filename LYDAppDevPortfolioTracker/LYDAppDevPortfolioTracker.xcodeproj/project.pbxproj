@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		136CD0A935FE0CFE22AAEAC7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */; };
 		AE2D3D8B25040FCF00DAF921 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D8A25040FCF00DAF921 /* Representation.swift */; };
+		AE2D3D93251B521200DAF921 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D92251B521200DAF921 /* PDF.swift */; };
 		AE504D6C247D4F17006EBF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6B247D4F17006EBF13 /* AppDelegate.swift */; };
 		AE504D6E247D4F17006EBF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */; };
 		AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE504D71247D4F17006EBF13 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		A77D562D99F097574B8A3298 /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Person 2.xcdatamodel"; sourceTree = "<group>"; };
 		AE2D3D8A25040FCF00DAF921 /* Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
+		AE2D3D92251B521200DAF921 /* PDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
 		AE504D68247D4F17006EBF13 /* LYDAppDevPortfolioTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYDAppDevPortfolioTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE504D6B247D4F17006EBF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE2D3D94251B521900DAF921 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				AE2D3D92251B521200DAF921 /* PDF.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
 		AE504D5F247D4F17006EBF13 = {
 			isa = PBXGroup;
 			children = (
@@ -97,10 +107,11 @@
 		AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */ = {
 			isa = PBXGroup;
 			children = (
-				AE504D82247DBFE0006EBF13 /* Model */,
 				AE504D71247D4F17006EBF13 /* Main.storyboard */,
+				AE504D82247DBFE0006EBF13 /* Model */,
 				AE504D99247DFB10006EBF13 /* Model Controller */,
 				AE504D92247DD6B8006EBF13 /* Project TV */,
+				AE2D3D94251B521900DAF921 /* PDF */,
 				AE504D8F247DD3E7006EBF13 /* PersonInfoEdit */,
 				AE504D8C247DD225006EBF13 /* PersonInfo */,
 				AE504D79247D4F18006EBF13 /* Info.plist */,
@@ -289,6 +300,7 @@
 				AE504D85247DC01A006EBF13 /* Person.xcdatamodeld in Sources */,
 				AE504D96247DDB10006EBF13 /* ProjectsTableViewController.swift in Sources */,
 				AE504D8B247DD209006EBF13 /* PersonInfoViewController.swift in Sources */,
+				AE2D3D93251B521200DAF921 /* PDF.swift in Sources */,
 				AE504D6E247D4F17006EBF13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
