@@ -21,11 +21,11 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     var personController = PersonController()
     lazy var fetchProjectController: NSFetchedResultsController<Project> = {
         let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "pinned", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "pinned", ascending: false)]
         let context = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: context,
-                                             sectionNameKeyPath: nil,
+                                             sectionNameKeyPath: "pinned",
                                              cacheName: nil)
         frc.delegate = self
         do {
@@ -37,7 +37,20 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     }()
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return fetchProjectController.sections?.count ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        switch section {
+        case 0:
+            return "Pinned"
+        case 1:
+            return "Unpinned"
+        default:
+            break
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,11 +58,22 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return fetchProjectController.sections?[section].numberOfObjects ?? 0
     }
     
+    func indexIn(indexPath: IndexPath) -> Project? {
+        if indexPath.section == 0 {
+            let pinned = fetchProjectController.fetchedObjects?.filter{ $0.pinned == true}
+            return pinned?[indexPath.row]
+        } else if indexPath.section == 1 {
+            let unpinned = fetchProjectController.fetchedObjects?.filter{ $0.pinned == false}
+            return unpinned?[indexPath.row]
+        }
+        return nil
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllProjectCell", for: indexPath)
         
-        let projects = fetchProjectController.fetchedObjects 
-        let project = projects?[indexPath.row]
+        let project = indexIn(indexPath: indexPath)
+        
         cell.textLabel?.text = project?.name
         cell.detailTextLabel?.text = project?.languages
         
