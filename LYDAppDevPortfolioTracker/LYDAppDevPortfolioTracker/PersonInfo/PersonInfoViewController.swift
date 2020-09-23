@@ -92,10 +92,18 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         } ()
         
         if let person = person {
-            
+            if person.image == nil {
+                imageView.image = #imageLiteral(resourceName: "default")
+            } else {
+                let fm = FileManager.default
+                let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+                let filePath = docURL.appendingPathComponent("\(person.image!)")
+                imageView.image = UIImage(contentsOfFile: filePath.path)
+            }
             nameLabel.text = person.name
             gitLabel.text = person.github
             introTextField.text = person.introduction ?? ""
+            //imageView.image =
             
         } else {
             performSegue(withIdentifier: "SettingSegue", sender: self)
