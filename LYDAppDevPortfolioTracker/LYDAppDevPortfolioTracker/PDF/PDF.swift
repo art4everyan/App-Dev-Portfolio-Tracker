@@ -40,7 +40,7 @@ class PDF {
             addImage(image: UIImage(named: "56")!,
             width: CGFloat(pageWidth), height: CGFloat(pageHeight))
             let titleSize = addTitle(pageRect: pageRect)
-            addBodyText(pageRect: pageRect, textTop: titleSize + 3.0)
+            addBodyText(pageRect: pageRect, textTop: titleSize + 2.0)
             
         }
         
@@ -90,10 +90,10 @@ class PDF {
         let textRect = CGRect(
             x: 1,
             y: textTop,
-            width: pageRect.width - 10,
-            height: pageRect.height - textTop - pageRect.height / 2.0
+            width: pageRect.width - 1,
+            height: pageRect.height - textTop - 5
         )
-
+        
         attributedText.draw(in: textRect)
     }
     
