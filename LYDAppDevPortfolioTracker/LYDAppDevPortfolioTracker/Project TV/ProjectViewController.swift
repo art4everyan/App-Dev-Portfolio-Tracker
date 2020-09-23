@@ -86,6 +86,7 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
                     return
                 }
                 personController.createProject(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                dismiss(animated: true, completion: nil)
             }
         } else {
             isEditPressed.toggle()

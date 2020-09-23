@@ -41,7 +41,7 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let x = fetchProjectController.sections?[section].numberOfObjects
+
         return fetchProjectController.sections?[section].numberOfObjects ?? 0
     }
     
@@ -73,7 +73,6 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "AddSegue":

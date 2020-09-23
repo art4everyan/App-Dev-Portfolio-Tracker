@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AE2D3D98251B90FD00DAF921"
+               BuildableName = "LYDAppDevPortfolioTrackerTests.xctest"
+               BlueprintName = "LYDAppDevPortfolioTrackerTests"
+               ReferencedContainer = "container:LYDAppDevPortfolioTracker.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

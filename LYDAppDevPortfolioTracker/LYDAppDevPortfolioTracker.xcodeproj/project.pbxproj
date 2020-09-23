@@ -10,6 +10,8 @@
 		136CD0A935FE0CFE22AAEAC7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */; };
 		AE2D3D8B25040FCF00DAF921 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D8A25040FCF00DAF921 /* Representation.swift */; };
 		AE2D3D93251B521200DAF921 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D92251B521200DAF921 /* PDF.swift */; };
+		AE2D3D9C251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D9B251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift */; };
+		AE2D3DA9251B973600DAF921 /* ProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3DA8251B973600DAF921 /* ProfileTest.swift */; };
 		AE504D6C247D4F17006EBF13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6B247D4F17006EBF13 /* AppDelegate.swift */; };
 		AE504D6E247D4F17006EBF13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */; };
 		AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE504D71247D4F17006EBF13 /* Main.storyboard */; };
@@ -25,12 +27,26 @@
 		AE504D98247DFB0A006EBF13 /* controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D97247DFB0A006EBF13 /* controller.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AE2D3D9E251B90FD00DAF921 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE504D60247D4F17006EBF13 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE504D67247D4F17006EBF13;
+			remoteInfo = LYDAppDevPortfolioTracker;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3E53EC685B757809C6434862 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.release.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.release.xcconfig"; sourceTree = "<group>"; };
 		A77D562D99F097574B8A3298 /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Person 2.xcdatamodel"; sourceTree = "<group>"; };
 		AE2D3D8A25040FCF00DAF921 /* Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
 		AE2D3D92251B521200DAF921 /* PDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
+		AE2D3D99251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYDAppDevPortfolioTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2D3D9B251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDAppDevPortfolioTrackerTests.swift; sourceTree = "<group>"; };
+		AE2D3D9D251B90FD00DAF921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE2D3DA8251B973600DAF921 /* ProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTest.swift; sourceTree = "<group>"; };
 		AE504D68247D4F17006EBF13 /* LYDAppDevPortfolioTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYDAppDevPortfolioTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE504D6B247D4F17006EBF13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AE2D3D96251B90FD00DAF921 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE504D65247D4F17006EBF13 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,10 +109,21 @@
 			path = PDF;
 			sourceTree = "<group>";
 		};
+		AE2D3D9A251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE2D3D9B251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift */,
+				AE2D3DA8251B973600DAF921 /* ProfileTest.swift */,
+				AE2D3D9D251B90FD00DAF921 /* Info.plist */,
+			);
+			path = LYDAppDevPortfolioTrackerTests;
+			sourceTree = "<group>";
+		};
 		AE504D5F247D4F17006EBF13 = {
 			isa = PBXGroup;
 			children = (
 				AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */,
+				AE2D3D9A251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests */,
 				AE504D69247D4F17006EBF13 /* Products */,
 				71709BF285515726C6532EE7 /* Pods */,
 				96849ECE6BFA621BDD03EFFB /* Frameworks */,
@@ -100,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				AE504D68247D4F17006EBF13 /* LYDAppDevPortfolioTracker.app */,
+				AE2D3D99251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,6 +213,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AE2D3D98251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE2D3DA2251B90FD00DAF921 /* Build configuration list for PBXNativeTarget "LYDAppDevPortfolioTrackerTests" */;
+			buildPhases = (
+				AE2D3D95251B90FD00DAF921 /* Sources */,
+				AE2D3D96251B90FD00DAF921 /* Frameworks */,
+				AE2D3D97251B90FD00DAF921 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE2D3D9F251B90FD00DAF921 /* PBXTargetDependency */,
+			);
+			name = LYDAppDevPortfolioTrackerTests;
+			productName = LYDAppDevPortfolioTrackerTests;
+			productReference = AE2D3D99251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AE504D67247D4F17006EBF13 /* LYDAppDevPortfolioTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE504D7C247D4F18006EBF13 /* Build configuration list for PBXNativeTarget "LYDAppDevPortfolioTracker" */;
@@ -203,10 +256,14 @@
 		AE504D60247D4F17006EBF13 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Lydia Zhang";
 				TargetAttributes = {
+					AE2D3D98251B90FD00DAF921 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = AE504D67247D4F17006EBF13;
+					};
 					AE504D67247D4F17006EBF13 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -226,11 +283,19 @@
 			projectRoot = "";
 			targets = (
 				AE504D67247D4F17006EBF13 /* LYDAppDevPortfolioTracker */,
+				AE2D3D98251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AE2D3D97251B90FD00DAF921 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE504D66247D4F17006EBF13 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +351,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AE2D3D95251B90FD00DAF921 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2D3D9C251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift in Sources */,
+				AE2D3DA9251B973600DAF921 /* ProfileTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE504D64247D4F17006EBF13 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +381,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AE2D3D9F251B90FD00DAF921 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE504D67247D4F17006EBF13 /* LYDAppDevPortfolioTracker */;
+			targetProxy = AE2D3D9E251B90FD00DAF921 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		AE504D71247D4F17006EBF13 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -327,6 +409,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AE2D3DA0251B90FD00DAF921 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LYDAppDevPortfolioTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.LYDAppDevPortfolioTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYDAppDevPortfolioTracker.app/LYDAppDevPortfolioTracker";
+			};
+			name = Debug;
+		};
+		AE2D3DA1251B90FD00DAF921 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LYDAppDevPortfolioTrackerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.LYDAppDevPortfolioTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYDAppDevPortfolioTracker.app/LYDAppDevPortfolioTracker";
+			};
+			name = Release;
+		};
 		AE504D7A247D4F18006EBF13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -484,6 +606,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AE2D3DA2251B90FD00DAF921 /* Build configuration list for PBXNativeTarget "LYDAppDevPortfolioTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE2D3DA0251B90FD00DAF921 /* Debug */,
+				AE2D3DA1251B90FD00DAF921 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE504D63247D4F17006EBF13 /* Build configuration list for PBXProject "LYDAppDevPortfolioTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
