@@ -55,6 +55,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             introduction.layer.cornerRadius = 20
             chooseImageButton.layer.cornerRadius = 5
             name.becomeFirstResponder()
+            didSetImage = false
         }
     }
     
@@ -67,41 +68,42 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet var edit: UIBarButtonItem!
     @IBOutlet var imageView: UIImageView!
     
-    var didSetImage: Bool = false
+    var didSetImage: Bool?
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any] ) {
-        if didSetImage == true {
-            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                imageView.image = pickedImage
-                imageView.contentMode = .scaleAspectFit
-                let fm = FileManager.default
-                let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
-                let docPath = docURL.path
-                let filePath = docURL.appendingPathComponent("profilePicture.png")
-                
-                do {
-                    let files = try fm.contentsOfDirectory(atPath: "\(docPath)")
-                    for file in files {
-                        if "\(docPath)/\(file)" == filePath.path {
-                            try fm.removeItem(atPath: filePath.path)
-                        }
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = pickedImage
+            imageView.contentMode = .scaleAspectFit
+            let fm = FileManager.default
+            let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let docPath = docURL.path
+            let filePath = docURL.appendingPathComponent("profilePicture.png")
+            
+            do {
+                let files = try fm.contentsOfDirectory(atPath: "\(docPath)")
+                for file in files {
+                    if "\(docPath)/\(file)" == filePath.path {
+                        try fm.removeItem(atPath: filePath.path)
                     }
-                } catch {
-                    NSLog("Adding Image failed.")
                 }
-                
-                do {
-                    if let pngData = pickedImage.pngData() {
-                        try pngData.write(to: filePath, options: .atomic)
-                    }
-                } catch {
-                   NSLog("Writing image to file path failed")
-                }
-                
-                imagePath = "profilePicture.png"
-                
-                didSetImage = false
-                
+            } catch {
+                NSLog("Adding Image failed.")
             }
+            
+            do {
+                if let pngData = pickedImage.pngData() {
+                    try pngData.write(to: filePath, options: .atomic)
+                }
+            } catch {
+               NSLog("Writing image to file path failed")
+            }
+            
+            imagePath = "profilePicture.png"
+                           
+        }
+        if imagePath != nil {
+           didSetImage = true
         }
         dismiss(animated: true, completion: nil)
     }
@@ -120,7 +122,9 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                     self.present(alert, animated: true)
                     return
                 }
-                
+                if imagePath != nil {
+                   didSetImage = true
+                }
                 personController.createPerson(name: name, github: github, intro: intro, imagePath: imagePath)
                 dismiss(animated: true, completion: nil)
             }
@@ -146,7 +150,9 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                     }
                     
                     if let person = person {
-                        
+                        if imagePath != nil {
+                           didSetImage = true
+                        }
                         personController.updatePerson(person: person, name: name, intro: intro, github: github, imagePath: imagePath)
                     }
                     
@@ -167,7 +173,6 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = true
-            didSetImage = true
             self.present(imagePicker, animated: true, completion: nil)
         }
     }

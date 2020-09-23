@@ -46,7 +46,7 @@ class PDF {
     }
     
     func addTitle(pageRect: CGRect) -> CGFloat {
-        let titleFont = UIFont.systemFont(ofSize: 18.0, weight: .bold)
+        let titleFont = UIFont.systemFont(ofSize: 50.0, weight: .bold)
         let titleAttributes: [NSAttributedString.Key: Any] =
             [NSAttributedString.Key.font: titleFont]
 
