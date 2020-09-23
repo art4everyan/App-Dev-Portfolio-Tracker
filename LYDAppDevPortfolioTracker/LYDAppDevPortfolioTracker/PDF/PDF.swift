@@ -32,14 +32,18 @@ class PDF {
         let pageWidth = 8.5 * 72.0
         let pageHeight = 11 * 72.0
         let pageRect = CGRect(x: 0, y: 0, width: pageWidth, height: pageHeight)
-
+        
         let renderer = UIGraphicsPDFRenderer(bounds: pageRect, format: format)
         
         let data = renderer.pdfData { (context) in
             context.beginPage()
-
+            
+            addImage(image: UIImage(named: "56")!,
+            pageRect: pageRect,
+            width: CGFloat(pageWidth), height: CGFloat(pageHeight))
             let titleSize = addTitle(pageRect: pageRect)
             addBodyText(pageRect: pageRect, textTop: titleSize + 36.0)
+            
         }
         
         return data
@@ -95,4 +99,11 @@ class PDF {
         attributedText.draw(in: textRect)
     }
     
+    func addImage(image: UIImage, pageRect: CGRect, width: CGFloat, height: CGFloat) {
+        
+        let imageRect = CGRect(x: 0, y: 0,
+                               width: width, height: height)
+        
+        image.draw(in: imageRect)
+    }
 }
