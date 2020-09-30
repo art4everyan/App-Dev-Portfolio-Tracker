@@ -38,6 +38,11 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func updateViews() {
         self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
+        self.introAndUpdate.layer.cornerRadius = 10
+        self.introAndUpdate.layer.borderWidth = 2
+        self.introAndUpdate.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 0.7)
+        
+        
         if let project = project, isViewLoaded {
             languages.text = project.languages
             languages.isUserInteractionEnabled = false
@@ -49,7 +54,7 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
             introAndUpdate.isUserInteractionEnabled = false
             pinnedSwitch.isOn = project.pinned
             pinnedSwitch.isUserInteractionEnabled = false
-            introAndUpdate.layer.cornerRadius = 20
+            
             save.isEnabled = true
             self.save.title = "Edit"
         } else if isViewLoaded {
@@ -63,7 +68,6 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
             introAndUpdate.isUserInteractionEnabled = true
             pinnedSwitch.isUserInteractionEnabled = true
             save.isEnabled = true
-            introAndUpdate.layer.cornerRadius = 20
             self.save.title = "Save"
             projectName.becomeFirstResponder()
         }

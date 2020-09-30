@@ -51,7 +51,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yq-Cx-OWY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Projects" id="YSl-CT-pGq">
+                                    <navigationItem id="YSl-CT-pGq">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jic-Nn-4oE">
                                             <connections>
                                                 <segue destination="peE-CN-Nj6" kind="presentation" identifier="AddSegue" modalPresentationStyle="fullScreen" id="8iA-Xn-szr"/>
@@ -126,13 +126,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79T-3V-PEG">
-                                <rect key="frame" x="20" y="300" width="65" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <rect key="frame" x="20" y="300" width="68" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-PM-qrj">
-                                <rect key="frame" x="185" y="300" width="102" height="31"/>
+                                <rect key="frame" x="188" y="300" width="102" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="3Bx-TM-3e1"/>
                                 </constraints>
@@ -477,7 +477,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j0z-Ew-gkq"/>
+        <segue reference="2qS-xp-i5F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text.fill" catalog="system" width="115" height="128"/>
