@@ -28,7 +28,8 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var pinnedSwitch: UISwitch!
     @IBOutlet var introAndUpdate: UITextView!
     @IBOutlet var save: UIBarButtonItem!
- 
+    @IBOutlet var introLabel: UILabel!
+    @IBOutlet var pinnedLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -37,6 +38,30 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func updateViews() {
+        self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
+        self.pinnedLabel.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1)
+        self.introLabel.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1)
+        
+        self.introAndUpdate.layer.cornerRadius = 10
+        self.introAndUpdate.layer.borderWidth = 2
+        self.introAndUpdate.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1)
+        self.introAndUpdate.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.4)
+        self.introAndUpdate.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        
+        self.projectName.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.5)
+        self.projectName.layer.cornerRadius = 5
+        self.projectName.layer.borderWidth = 2
+        self.projectName.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+            
+        self.githubAddress.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.5)
+        self.githubAddress.layer.cornerRadius = 5
+        self.githubAddress.layer.borderWidth = 2
+        self.githubAddress.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        
+        self.languages.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.5)
+        self.languages.layer.cornerRadius = 5
+        self.languages.layer.borderWidth = 2
+        self.languages.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
         
         if let project = project, isViewLoaded {
             languages.text = project.languages
@@ -49,7 +74,7 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
             introAndUpdate.isUserInteractionEnabled = false
             pinnedSwitch.isOn = project.pinned
             pinnedSwitch.isUserInteractionEnabled = false
-            introAndUpdate.layer.cornerRadius = 20
+            
             save.isEnabled = true
             self.save.title = "Edit"
         } else if isViewLoaded {
@@ -63,7 +88,6 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
             introAndUpdate.isUserInteractionEnabled = true
             pinnedSwitch.isUserInteractionEnabled = true
             save.isEnabled = true
-            introAndUpdate.layer.cornerRadius = 20
             self.save.title = "Save"
             projectName.becomeFirstResponder()
         }

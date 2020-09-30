@@ -23,6 +23,29 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     }
     
     func updateViews() {
+        self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
+        self.introduction.layer.cornerRadius = 8
+        self.introduction.layer.backgroundColor = CGColor(srgbRed: 0.957, green: 0.953, blue: 0.933, alpha: 0.4)
+        self.introduction.layer.borderWidth = 2
+        self.introduction.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        
+        self.chooseImageButton.layer.cornerRadius = 5
+        self.chooseImageButton.layer.backgroundColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        self.chooseImageButton.setTitleColor(UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 1), for: .normal)
+        
+        self.ShareButton.setTitleColor(UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.6), for: .normal)
+        self.ShareButton.layer.backgroundColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        self.ShareButton.layer.cornerRadius = 8
+        
+        self.name.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        self.name.layer.borderWidth = 2
+        self.name.layer.cornerRadius = 5
+        self.name.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.5)
+        
+        self.github.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.5)
+        self.github.layer.cornerRadius = 5
+        self.github.layer.borderWidth = 2
+        self.github.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
         
         if let person = person, isViewLoaded {
             if person.image == nil {
@@ -31,7 +54,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                 let fm = FileManager.default
                 let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
                 let filePath = docURL.appendingPathComponent("\(person.image!)")
-                //let x = filePath.path
+                
                 imageView.image = UIImage(contentsOfFile: filePath.path)
             }
             name.text = person.name
@@ -42,8 +65,6 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             chooseImageButton.isUserInteractionEnabled = false
             self.edit.title = "Edit"
             introduction.isUserInteractionEnabled = false
-            introduction.layer.cornerRadius = 20
-            chooseImageButton.layer.cornerRadius = 5
         } else if isViewLoaded {
             name.text = ""
             github.text = ""
@@ -53,8 +74,6 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             introduction.isUserInteractionEnabled = true
             chooseImageButton.isUserInteractionEnabled = true
             github.isUserInteractionEnabled = true
-            introduction.layer.cornerRadius = 20
-            chooseImageButton.layer.cornerRadius = 5
             name.becomeFirstResponder()
             didSetImage = false
         }
@@ -68,7 +87,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     @IBOutlet var chooseImageButton: UIButton!
     @IBOutlet var edit: UIBarButtonItem!
     @IBOutlet var imageView: UIImageView!
-    
+    @IBOutlet var ShareButton: UIButton!
     var didSetImage: Bool?
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any] ) {

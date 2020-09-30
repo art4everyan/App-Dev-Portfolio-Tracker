@@ -40,8 +40,13 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
         return fetchProjectController.sections?.count ?? 1
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 0.7)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.8)
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         switch section {
         case 0:
             return "Pinned"
@@ -71,11 +76,14 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AllProjectCell", for: indexPath)
+        cell.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
         
         let project = indexIn(indexPath: indexPath)
         
         cell.textLabel?.text = project?.name
+        cell.textLabel?.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
         cell.detailTextLabel?.text = project?.languages
+        cell.detailTextLabel?.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
         
         return cell
     }
@@ -84,9 +92,10 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
-        //tableView.reloadData()
+        self.tableView.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
     }
 
     override func viewWillAppear(_ animated: Bool) {
