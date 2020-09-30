@@ -78,7 +78,7 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
         self.tableView.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
-        self.introTextField.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.5)
+        self.introTextField.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.4)
         self.introTextField.layer.cornerRadius = 8
         self.introTextField.layer.borderWidth = 2.0
         self.introTextField.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
