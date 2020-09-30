@@ -126,23 +126,24 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pinned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79T-3V-PEG">
-                                <rect key="frame" x="20" y="300" width="68" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <rect key="frame" x="20" y="300" width="71.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-PM-qrj">
-                                <rect key="frame" x="188" y="300" width="102" height="31"/>
+                                <rect key="frame" x="191.5" y="300" width="102" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="3Bx-TM-3e1"/>
                                 </constraints>
+                                <color key="onTintColor" red="0.25645644429999997" green="0.20819969930000001" blue="0.042260487469999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="switchToggled:" destination="peE-CN-Nj6" eventType="valueChanged" id="ep6-eO-t19"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro &amp; Updates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-9i-Xk4">
-                                <rect key="frame" x="20" y="344" width="145.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <rect key="frame" x="20" y="344" width="153" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -185,7 +186,9 @@
                     <connections>
                         <outlet property="githubAddress" destination="Y2h-G3-GNP" id="egX-4P-uvp"/>
                         <outlet property="introAndUpdate" destination="mgv-Ek-3Os" id="uXK-W9-0WI"/>
+                        <outlet property="introLabel" destination="V8a-9i-Xk4" id="Iso-Jp-at4"/>
                         <outlet property="languages" destination="bhs-zH-bAd" id="zHo-pI-pWD"/>
+                        <outlet property="pinnedLabel" destination="79T-3V-PEG" id="03O-OD-17m"/>
                         <outlet property="pinnedSwitch" destination="6pZ-PM-qrj" id="Dp3-e1-pZT"/>
                         <outlet property="projectName" destination="r0i-2E-qh2" id="FWM-Py-AeI"/>
                         <outlet property="save" destination="dLj-G1-aRn" id="fnQ-WD-Rtd"/>
