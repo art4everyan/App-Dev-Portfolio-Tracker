@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import PDFKit
+import MessageUI
 
-class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
     
     private var imagePath: String?
     private var isEditPressed: Bool = false
@@ -176,6 +177,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
+    
     @IBAction func shareTapped(_ sender: Any) {
         guard let person = person else { return }
         guard let name = person.name,
@@ -186,8 +188,21 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
         
         let pdf = PDF(name: name, intro: intro, github: github)
         let data = pdf.createPDF()
-        let activityVC = UIActivityViewController(activityItems: [data], applicationActivities: [])
-        present(activityVC, animated: true, completion: nil)
+//        let activityVC = UIActivityViewController(activityItems: [data], applicationActivities: [])
+//        present(activityVC, animated: true, completion: nil)
+        showMailComposer(person: person, data: data)
+    }
+    
+    private func showMailComposer(person: Person, data: Data) {
+        guard MFMailComposeViewController.canSendMail() else {
+            return
+        }
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setSubject("\(String(describing: person.name))'s Portfolio")
+        composer.setMessageBody("Here is my protfolio card!", isHTML: false)
+        composer.addAttachmentData(data, mimeType: "pdf", fileName: "\(String(describing: person.name))")
+        present(composer, animated: true)
     }
     
     @IBAction func goBackTapped(_ sender: Any) {
