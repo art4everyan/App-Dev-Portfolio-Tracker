@@ -23,6 +23,8 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     }
     
     func updateViews() {
+        self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
+        
         
         if let person = person, isViewLoaded {
             if person.image == nil {
@@ -31,7 +33,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                 let fm = FileManager.default
                 let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
                 let filePath = docURL.appendingPathComponent("\(person.image!)")
-                //let x = filePath.path
+                
                 imageView.image = UIImage(contentsOfFile: filePath.path)
             }
             name.text = person.name

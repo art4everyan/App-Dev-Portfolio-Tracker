@@ -37,7 +37,7 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func updateViews() {
-        
+        self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
         if let project = project, isViewLoaded {
             languages.text = project.languages
             languages.isUserInteractionEnabled = false

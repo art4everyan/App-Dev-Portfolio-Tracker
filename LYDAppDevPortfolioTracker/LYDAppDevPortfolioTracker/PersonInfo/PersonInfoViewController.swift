@@ -38,18 +38,23 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let x = fetchProjectController.fetchedObjects
+        
         return fetchProjectController.sections?[section].numberOfObjects ?? 0
     }
     
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "PinnedCell", for: indexPath)
+        cell.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
+        
         if let projects = fetchProjectController.fetchedObjects {
             let project = projects[indexPath.row]
             cell.textLabel?.text = project.name
+            cell.textLabel?.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
             cell.detailTextLabel?.text = project.languages
+            cell.detailTextLabel?.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
             return cell
         } else {
             return UITableViewCell()
@@ -65,11 +70,22 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var introTextField: UITextView!
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var projectsLabel: UILabel!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
+        self.tableView.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
+        self.introTextField.backgroundColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.5)
+        self.introTextField.layer.cornerRadius = 8
+        self.introTextField.layer.borderWidth = 2.0
+        self.introTextField.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        self.introTextField.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        self.nameLabel.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        self.gitLabel.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
+        self.projectsLabel.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
         tableView.delegate = self
         tableView.dataSource = self
     }

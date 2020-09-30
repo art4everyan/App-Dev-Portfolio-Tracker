@@ -84,6 +84,7 @@ class ProjectsTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
         //tableView.reloadData()

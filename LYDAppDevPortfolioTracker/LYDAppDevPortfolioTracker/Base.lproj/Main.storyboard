@@ -226,7 +226,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ErM-Cy-CbX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Settings" id="cam-cc-3wh">
+                                    <navigationItem id="cam-cc-3wh">
                                         <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="V3n-Th-jhT">
                                             <connections>
                                                 <action selector="goBackTapped:" destination="j9N-nn-1ki" id="npa-dV-cyv"/>
@@ -330,10 +330,10 @@
                                     <constraint firstAttribute="height" constant="180" id="EZ9-cG-5dV"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-qL-Fax">
-                                <rect key="frame" x="210" y="208" width="194" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQD-qL-Fax">
+                                <rect key="frame" x="190" y="208" width="214" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Vg-lc-pHq">
@@ -343,17 +343,17 @@
                                     <constraint firstAttribute="height" constant="120" id="neB-Ft-DL6"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEE-6C-NKY">
-                                <rect key="frame" x="10" y="418" width="66" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="10" y="418" width="84" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.25645644430051817" green="0.20819969930063503" blue="0.042260487465542965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oi1-Yw-z62">
-                                <rect key="frame" x="10" y="457.5" width="394" height="355.5"/>
+                                <rect key="frame" x="10" y="462" width="394" height="351"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PinnedCell" textLabel="5XN-4q-hcF" detailTextLabel="fyx-i5-vln" style="IBUITableViewCellStyleValue1" id="eUN-fY-Mwk">
@@ -406,8 +406,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="OJP-Hr-Cpe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -426,7 +426,7 @@
                             <constraint firstItem="FEE-6C-NKY" firstAttribute="top" secondItem="3Vg-lc-pHq" secondAttribute="bottom" constant="20" id="Qel-SS-mhe"/>
                             <constraint firstItem="6Qj-3M-Bgo" firstAttribute="trailing" secondItem="Oi1-Yw-z62" secondAttribute="trailing" constant="10" id="Rhe-x2-Xwp"/>
                             <constraint firstItem="wJs-Tq-ZJg" firstAttribute="top" secondItem="FDz-ob-SOy" secondAttribute="bottom" constant="20" id="Vtv-o8-QJU"/>
-                            <constraint firstItem="IQD-qL-Fax" firstAttribute="leading" secondItem="c48-GP-y8a" secondAttribute="trailing" constant="30" id="f7K-AH-EdH"/>
+                            <constraint firstItem="IQD-qL-Fax" firstAttribute="leading" secondItem="c48-GP-y8a" secondAttribute="trailing" constant="10" id="f7K-AH-EdH"/>
                             <constraint firstItem="Oi1-Yw-z62" firstAttribute="leading" secondItem="6Qj-3M-Bgo" secondAttribute="leading" constant="10" id="gdg-aK-pLC"/>
                             <constraint firstItem="c48-GP-y8a" firstAttribute="top" secondItem="FDz-ob-SOy" secondAttribute="bottom" id="juq-od-0Vq"/>
                             <constraint firstItem="6Qj-3M-Bgo" firstAttribute="bottom" secondItem="Oi1-Yw-z62" secondAttribute="bottom" id="mqS-zW-A7W"/>
@@ -443,6 +443,7 @@
                         <outlet property="imageView" destination="c48-GP-y8a" id="gXL-wl-vtf"/>
                         <outlet property="introTextField" destination="3Vg-lc-pHq" id="0ge-CK-zA3"/>
                         <outlet property="nameLabel" destination="wJs-Tq-ZJg" id="bTX-Om-Ycb"/>
+                        <outlet property="projectsLabel" destination="FEE-6C-NKY" id="PLF-v9-tcl"/>
                         <outlet property="tableView" destination="Oi1-Yw-z62" id="3NY-wK-T52"/>
                     </connections>
                 </viewController>
