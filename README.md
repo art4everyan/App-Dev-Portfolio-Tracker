@@ -11,7 +11,7 @@ Main Personal Page:
 
 Personal Edit and Share Page:
 
-![Personal Edit View](https://github.com/art4everyan/App-Dev-Portfolio-Tracker/blob/master/LYDAppDevPortfolioTracker/ProjectEditV.png?raw=true)
+![Personal Edit View](https://github.com/art4everyan/App-Dev-Portfolio-Tracker/blob/master/LYDAppDevPortfolioTracker/PersonalEditV.png?raw=true)
 
 Project Table View:
 
