@@ -25,6 +25,7 @@
 		AE504D94247DD859006EBF13 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D93247DD859006EBF13 /* ProjectViewController.swift */; };
 		AE504D96247DDB10006EBF13 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D95247DDB10006EBF13 /* ProjectsTableViewController.swift */; };
 		AE504D98247DFB0A006EBF13 /* controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D97247DFB0A006EBF13 /* controller.swift */; };
+		AEE79C86252B7C050078EC6C /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEE79C85252B7C050078EC6C /* Sign.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		AE504D93247DD859006EBF13 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		AE504D95247DDB10006EBF13 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
 		AE504D97247DFB0A006EBF13 /* controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controller.swift; sourceTree = "<group>"; };
+		AEE79C85252B7C050078EC6C /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		B77FFFAA853A7753A49D813B /* Pods_LYDAppDevPortfolioTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYDAppDevPortfolioTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				AE504D71247D4F17006EBF13 /* Main.storyboard */,
+				AEE79C85252B7C050078EC6C /* Sign.storyboard */,
 				AE504D82247DBFE0006EBF13 /* Model */,
 				AE504D99247DFB10006EBF13 /* Model Controller */,
 				AE504D92247DD6B8006EBF13 /* Project TV */,
@@ -303,6 +306,7 @@
 				AE504D78247D4F18006EBF13 /* LaunchScreen.storyboard in Resources */,
 				AE504D75247D4F18006EBF13 /* Assets.xcassets in Resources */,
 				AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */,
+				AEE79C86252B7C050078EC6C /* Sign.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.LYDAppDevPortfolioTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -599,7 +603,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.LYDAppDevPortfolioTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
