@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l0t-gT-ODL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="mkz-dN-x3h">
+            <objects>
+                <viewController id="phz-1t-N1c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8X6-OR-rTf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-Bd-mQn">
+                                <rect key="frame" x="120.5" y="188" width="173" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.36524449479999999" green="0.25106889510000002" blue="0.1708320498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgG-jQ-33E">
+                                <rect key="frame" x="100" y="321" width="214" height="50"/>
+                                <color key="backgroundColor" red="0.36524449481813481" green="0.25106889512676678" blue="0.17083204978337194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="UwV-AH-VYd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Google Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvj-dY-z29">
+                                <rect key="frame" x="100" y="431" width="214" height="50"/>
+                                <color key="backgroundColor" red="0.36524449479999999" green="0.25106889510000002" blue="0.1708320498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CTF-C1-d4T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Guest">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pL2-hT-Iep" kind="show" id="7ZH-Uj-wWu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92316763793438417" green="0.92356840285612507" blue="0.82931464953953637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ccH-Bd-mQn" firstAttribute="top" secondItem="5cT-Vy-0P7" secondAttribute="top" constant="100" id="BGa-F5-zXu"/>
+                            <constraint firstItem="5cT-Vy-0P7" firstAttribute="trailing" secondItem="sgG-jQ-33E" secondAttribute="trailing" constant="100" id="DfG-cp-vKS"/>
+                            <constraint firstItem="sgG-jQ-33E" firstAttribute="leading" secondItem="5cT-Vy-0P7" secondAttribute="leading" constant="100" id="McV-ug-2dj"/>
+                            <constraint firstItem="5cT-Vy-0P7" firstAttribute="trailing" secondItem="Tvj-dY-z29" secondAttribute="trailing" constant="100" id="S0k-pw-ZQe"/>
+                            <constraint firstItem="ccH-Bd-mQn" firstAttribute="centerX" secondItem="8X6-OR-rTf" secondAttribute="centerX" id="XGg-9F-6Tp"/>
+                            <constraint firstItem="sgG-jQ-33E" firstAttribute="top" secondItem="ccH-Bd-mQn" secondAttribute="bottom" constant="85" id="Y2q-WF-QIJ"/>
+                            <constraint firstItem="Tvj-dY-z29" firstAttribute="top" secondItem="sgG-jQ-33E" secondAttribute="bottom" constant="60" id="goS-Le-MhI"/>
+                            <constraint firstItem="Tvj-dY-z29" firstAttribute="leading" secondItem="5cT-Vy-0P7" secondAttribute="leading" constant="100" id="nRi-qf-qX4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5cT-Vy-0P7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0su-MT-MbW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SQj-0f-VPZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868.11594202898561" y="-70.3125"/>
+        </scene>
+        <!--MainSB-->
+        <scene sceneID="JlJ-ug-OC5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainSB" id="pL2-hT-Iep" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xZe-o0-CQl"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBq-WJ-pjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626" y="-70"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tVd-Qu-7qZ">
+            <objects>
+                <navigationController storyboardIdentifier="Sign" automaticallyAdjustsScrollViewInsets="NO" id="l0t-gT-ODL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mog-Hd-op6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="phz-1t-N1c" kind="relationship" relationship="rootViewController" id="FVG-GK-KUj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRs-tK-nEN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.028985507246382" y="-70.3125"/>
+        </scene>
+    </scenes>
+</document>
