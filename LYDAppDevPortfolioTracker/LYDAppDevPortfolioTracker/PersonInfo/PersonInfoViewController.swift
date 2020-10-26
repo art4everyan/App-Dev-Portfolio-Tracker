@@ -12,7 +12,7 @@ import CoreData
 class PersonInfoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var personController = PersonController()
-    var person: Person?
+    var person: NSFetchedResultsController<Person>?
     lazy var fetchProjectController: NSFetchedResultsController<Project> = {
         
             let fetchRequest: NSFetchRequest<Project> = Project.fetchRequest()
@@ -33,10 +33,6 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         
     }()
 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return fetchProjectController.sections?.count ?? 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return fetchProjectController.sections?[section].numberOfObjects ?? 0
@@ -88,43 +84,50 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
         self.projectsLabel.textColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
         tableView.delegate = self
         tableView.dataSource = self
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.tableView.reloadData()
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.person = {
-            let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-            let context = CoreDataStack.shared.mainContext
-            return try? context.fetch(fetchRequest).first
-        } ()
-        
-        if let person = person {
-            if person.image == nil {
-                imageView.image = #imageLiteral(resourceName: "default")
-            } else {
-                let fm = FileManager.default
-                let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
-                let filePath = docURL.appendingPathComponent("\(person.image!)")
-                imageView.image = UIImage(contentsOfFile: filePath.path)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let uuid = userDefault.string(forKey: "token")
+        if uuid != "" {
+            personController.fetchPerson(uuid: uuid!) { (person) in
+                do{
+                    _ = try person.get()
+                    self.person = {
+                        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+                        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+                        let context = CoreDataStack.shared.mainContext
+                        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                             managedObjectContext: context,
+                                                             sectionNameKeyPath: nil,
+                                                             cacheName: nil)
+                        frc.delegate = self
+                        do {
+                            try frc.performFetch()
+                        } catch {
+                            NSLog("Error doing frc fetch")
+                        }
+                        return frc
+                    } ()
+                    self.nameLabel.text = self.person?.fetchedObjects?.first?.name ?? ""
+                    self.gitLabel.text = self.person?.fetchedObjects?.first?.github ?? ""
+                    self.introTextField.text = self.person?.fetchedObjects?.first?.introduction ?? ""
+                } catch {
+                    NSLog("\(error)")
+                }
             }
-            nameLabel.text = person.name
-            gitLabel.text = person.github
-            introTextField.text = person.introduction ?? ""
-            //imageView.image =
-            
-        } else {
-            performSegue(withIdentifier: "SettingSegue", sender: self)
         }
         self.tableView.reloadData()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard person != nil else {
+            performSegue(withIdentifier: "SettingSegue", sender: self)
+            return
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -133,7 +136,7 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
             guard let settingVC = segue.destination as? PersonInfoEditViewController else {return}
             settingVC.personController = personController
             if let person = person {
-                settingVC.person = person
+                settingVC.person = person.fetchedObjects?.first
             }
             
         case "PinnedProjectSegue":
@@ -142,7 +145,7 @@ class PersonInfoViewController: UIViewController, UITableViewDataSource, UITable
     
                 pinnedVC.project = projects[indexPath.row]
             }
-            pinnedVC.person = person
+            pinnedVC.person = person?.fetchedObjects?.first
             pinnedVC.personController = personController
         default:
             break

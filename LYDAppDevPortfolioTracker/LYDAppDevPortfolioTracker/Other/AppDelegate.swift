@@ -7,11 +7,25 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("Error: The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+    }
+    
 
-
+        var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,25 +34,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().barTintColor = UIColor(displayP3Red: 0.27, green: 0.25, blue: 0.23, alpha: 0.2)
         UITabBar.appearance().tintColor = UIColor(displayP3Red: 0.957, green: 0.953, blue: 0.933, alpha: 0.8)
+        FirebaseApp.configure()
+        
+        let signIn = GIDSignIn.sharedInstance()
+        signIn?.clientID = FirebaseApp.app()?.options.clientID
+        //signIn?.clientID = "780801679852-u44mc2idlv0ous8ngm19kfdvf342gjn6.apps.googleusercontent.com"
+        if Auth.auth().currentUser != nil {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(identifier: "PersonInfoViewController")
+            window?.rootViewController = viewController
+            window?.makeKeyAndVisible()
+        }
+
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    @available(iOS 13.0, *)
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    @available(iOS 13.0, *)
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
+    
 }
 

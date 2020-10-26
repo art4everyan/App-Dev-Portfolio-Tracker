@@ -22,6 +22,7 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
         }
     }
     
+    
     func updateViews() {
         self.view.backgroundColor = UIColor(displayP3Red: 0.737, green: 0.722, blue: 0.694, alpha: 1)
         self.introduction.layer.cornerRadius = 8
@@ -48,15 +49,15 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
         self.github.layer.borderColor = CGColor(srgbRed: 0.27, green: 0.25, blue: 0.23, alpha: 1.0)
         
         if let person = person, isViewLoaded {
-            if person.image == nil {
-                imageView.image = #imageLiteral(resourceName: "default")
-            } else {
-                let fm = FileManager.default
-                let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
-                let filePath = docURL.appendingPathComponent("\(person.image!)")
-                
-                imageView.image = UIImage(contentsOfFile: filePath.path)
-            }
+//            if person.image == nil {
+//                imageView.image = #imageLiteral(resourceName: "default")
+//            } else {
+//                let fm = FileManager.default
+//                let docURL = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+//                let filePath = docURL.appendingPathComponent("\(person.image!)")
+//
+//                imageView.image = UIImage(contentsOfFile: filePath.path)
+//            }
             name.text = person.name
             github.text = person.github
             introduction.text = person.introduction ?? ""
@@ -145,8 +146,11 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                 if imagePath != nil {
                    didSetImage = true
                 }
-                personController.createPerson(name: name, github: github, intro: intro, imagePath: imagePath)
-                dismiss(animated: true, completion: nil)
+                if userDefault.string(forKey: "token") == "" {
+                    personController.createPerson(name: name, github: github, intro: intro, uuid: "")
+                } else {
+                    personController.createPersonFirebase(name: name, github: github, intro: intro, uuid: userDefault.string(forKey: "token"))
+                }
             }
         } else {
             isEditPressed.toggle()
@@ -173,7 +177,12 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
                         if imagePath != nil {
                            didSetImage = true
                         }
-                        personController.updatePerson(person: person, name: name, intro: intro, github: github, imagePath: imagePath)
+                        if userDefault.string(forKey: "token") == "" {
+                            personController.updatePerson(person: person, name: name, intro: intro, github: github)
+                        } else {
+                            personController.updatePersonFirebase(person: person, name: name, intro: intro, github: github)
+                        }
+                        
                     }
                     
                 }
@@ -188,13 +197,21 @@ class PersonInfoEditViewController: UIViewController, UIImagePickerControllerDel
     }
 
     @IBAction func choosePicTapped(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
+        if userDefault.string(forKey: "token") == "" {
+            let alertController  = UIAlertController(title: "Login Needed", message: "Please login to upload profile image", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true)
+        } else {
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.allowsEditing = true
+                self.present(imagePicker, animated: true, completion: nil)
+            }
         }
+        
     }
     
     @IBAction func shareTapped(_ sender: Any) {

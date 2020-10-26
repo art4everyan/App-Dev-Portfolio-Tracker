@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7802568161EF1BFF339498D7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649CBBC3034B53DD32549E83 /* Pods_LYDAppDevPortfolioTracker.framework */; };
+		864E9A5086A3C369169BA1A3 /* Pods_LYDAppDevPortfolioTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEA4B48F1EB726389F6CCBE /* Pods_LYDAppDevPortfolioTrackerTests.framework */; };
 		AE2D3D8B25040FCF00DAF921 /* Representation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D8A25040FCF00DAF921 /* Representation.swift */; };
 		AE2D3D93251B521200DAF921 /* PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D92251B521200DAF921 /* PDF.swift */; };
 		AE2D3D9C251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D3D9B251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift */; };
@@ -23,8 +25,12 @@
 		AE504D8E247DD3E2006EBF13 /* PersonInfoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D8D247DD3E2006EBF13 /* PersonInfoEditViewController.swift */; };
 		AE504D94247DD859006EBF13 /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D93247DD859006EBF13 /* ProjectViewController.swift */; };
 		AE504D96247DDB10006EBF13 /* ProjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D95247DDB10006EBF13 /* ProjectsTableViewController.swift */; };
-		AE504D98247DFB0A006EBF13 /* controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D97247DFB0A006EBF13 /* controller.swift */; };
+		AE504D98247DFB0A006EBF13 /* personController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE504D97247DFB0A006EBF13 /* personController.swift */; };
 		AEE79C86252B7C050078EC6C /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEE79C85252B7C050078EC6C /* Sign.storyboard */; };
+		AEE79C8B252BEE850078EC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEE79C8A252BEE850078EC6C /* GoogleService-Info.plist */; };
+		AEE79C8C252BEE850078EC6C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEE79C8A252BEE850078EC6C /* GoogleService-Info.plist */; };
+		AEE79C8E252BFCE10078EC6C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE79C8D252BFCE10078EC6C /* SignInViewController.swift */; };
+		AEE79C8F252BFCE10078EC6C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE79C8D252BFCE10078EC6C /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AE0767B525430D58008C0EFE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		07577F70D1E689B646DEE791 /* Pods-LYDAppDevPortfolioTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTrackerTests.release.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTrackerTests/Pods-LYDAppDevPortfolioTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		41346B6A3F171357496109A6 /* Pods-LYDAppDevPortfolioTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTrackerTests/Pods-LYDAppDevPortfolioTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5150B8C5B3632C3051AAD284 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.release.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.release.xcconfig"; sourceTree = "<group>"; };
+		5273EA8DC588A0DCECD5C19F /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; path = "Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		649CBBC3034B53DD32549E83 /* Pods_LYDAppDevPortfolioTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYDAppDevPortfolioTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DEA4B48F1EB726389F6CCBE /* Pods_LYDAppDevPortfolioTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYDAppDevPortfolioTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE0767AA25430AC8008C0EFE /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		AE0767AC25430AD0008C0EFE /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		AE0767AE25430ADB008C0EFE /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		AE0767B025430AE3008C0EFE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AE0767B625430D7C008C0EFE /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = GoogleSignIn/GoogleSignIn.framework; sourceTree = "<group>"; };
 		AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Person 2.xcdatamodel"; sourceTree = "<group>"; };
 		AE2D3D8A25040FCF00DAF921 /* Representation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Representation.swift; sourceTree = "<group>"; };
 		AE2D3D92251B521200DAF921 /* PDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDF.swift; sourceTree = "<group>"; };
@@ -59,8 +89,12 @@
 		AE504D8D247DD3E2006EBF13 /* PersonInfoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInfoEditViewController.swift; sourceTree = "<group>"; };
 		AE504D93247DD859006EBF13 /* ProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		AE504D95247DDB10006EBF13 /* ProjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewController.swift; sourceTree = "<group>"; };
-		AE504D97247DFB0A006EBF13 /* controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controller.swift; sourceTree = "<group>"; };
+		AE504D97247DFB0A006EBF13 /* personController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personController.swift; sourceTree = "<group>"; };
+		AE5157C9252C158200F97BB6 /* Person 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Person 3.xcdatamodel"; sourceTree = "<group>"; };
+		AEE07C0B253573EE009B9040 /* Person 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Person 4.xcdatamodel"; sourceTree = "<group>"; };
 		AEE79C85252B7C050078EC6C /* Sign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
+		AEE79C8A252BEE850078EC6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AEE79C8D252BFCE10078EC6C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				864E9A5086A3C369169BA1A3 /* Pods_LYDAppDevPortfolioTrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +110,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7802568161EF1BFF339498D7 /* Pods_LYDAppDevPortfolioTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE0767A925430AC8008C0EFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE0767B625430D7C008C0EFE /* GoogleSignIn.framework */,
+				AE0767B025430AE3008C0EFE /* SystemConfiguration.framework */,
+				AE0767AE25430ADB008C0EFE /* AuthenticationServices.framework */,
+				AE0767AC25430AD0008C0EFE /* SafariServices.framework */,
+				AE0767AA25430AC8008C0EFE /* LocalAuthentication.framework */,
+				649CBBC3034B53DD32549E83 /* Pods_LYDAppDevPortfolioTracker.framework */,
+				7DEA4B48F1EB726389F6CCBE /* Pods_LYDAppDevPortfolioTrackerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE2D3D94251B521900DAF921 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +155,8 @@
 				AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */,
 				AE2D3D9A251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests */,
 				AE504D69247D4F17006EBF13 /* Products */,
+				AE0767A925430AC8008C0EFE /* Frameworks */,
+				DBE125BAA50ACC48809C97C3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +172,7 @@
 		AE504D6A247D4F17006EBF13 /* LYDAppDevPortfolioTracker */ = {
 			isa = PBXGroup;
 			children = (
+				AEE79C90252BFCE80078EC6C /* Sign */,
 				AE504D71247D4F17006EBF13 /* Main.storyboard */,
 				AEE79C85252B7C050078EC6C /* Sign.storyboard */,
 				AE504D82247DBFE0006EBF13 /* Model */,
@@ -129,6 +182,7 @@
 				AE504D8F247DD3E7006EBF13 /* PersonInfoEdit */,
 				AE504D8C247DD225006EBF13 /* PersonInfo */,
 				AE504D79247D4F18006EBF13 /* Info.plist */,
+				AEE79C8A252BEE850078EC6C /* GoogleService-Info.plist */,
 				AE504D7F247DBF87006EBF13 /* Other */,
 			);
 			path = LYDAppDevPortfolioTracker;
@@ -138,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				AE504D6B247D4F17006EBF13 /* AppDelegate.swift */,
-				AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */,
 				AE504D74247D4F18006EBF13 /* Assets.xcassets */,
+				AE504D6D247D4F17006EBF13 /* SceneDelegate.swift */,
 				AE504D76247D4F18006EBF13 /* LaunchScreen.storyboard */,
 			);
 			path = Other;
@@ -184,9 +238,28 @@
 		AE504D99247DFB10006EBF13 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AE504D97247DFB0A006EBF13 /* controller.swift */,
+				AE504D97247DFB0A006EBF13 /* personController.swift */,
 			);
 			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		AEE79C90252BFCE80078EC6C /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				AEE79C8D252BFCE10078EC6C /* SignInViewController.swift */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		DBE125BAA50ACC48809C97C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5273EA8DC588A0DCECD5C19F /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */,
+				5150B8C5B3632C3051AAD284 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */,
+				41346B6A3F171357496109A6 /* Pods-LYDAppDevPortfolioTrackerTests.debug.xcconfig */,
+				07577F70D1E689B646DEE791 /* Pods-LYDAppDevPortfolioTrackerTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE2D3DA2251B90FD00DAF921 /* Build configuration list for PBXNativeTarget "LYDAppDevPortfolioTrackerTests" */;
 			buildPhases = (
+				4745B513872D06EEE416320A /* [CP] Check Pods Manifest.lock */,
 				AE2D3D95251B90FD00DAF921 /* Sources */,
 				AE2D3D96251B90FD00DAF921 /* Frameworks */,
 				AE2D3D97251B90FD00DAF921 /* Resources */,
@@ -214,10 +288,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE504D7C247D4F18006EBF13 /* Build configuration list for PBXNativeTarget "LYDAppDevPortfolioTracker" */;
 			buildPhases = (
-				AEE4B6BD2480D4CA007B1E37 /* ShellScript */,
+				DD6B07F217133C17925408D2 /* [CP] Check Pods Manifest.lock */,
 				AE504D64247D4F17006EBF13 /* Sources */,
 				AE504D65247D4F17006EBF13 /* Frameworks */,
 				AE504D66247D4F17006EBF13 /* Resources */,
+				AE0767B525430D58008C0EFE /* Embed Frameworks */,
+				0C0DD97D0923C4A75A4DC7A0 /* [CP] Embed Pods Frameworks */,
+				E658F8864B02CDE871D93A0D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE79C8C252BEE850078EC6C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +358,7 @@
 			files = (
 				AE504D78247D4F18006EBF13 /* LaunchScreen.storyboard in Resources */,
 				AE504D75247D4F18006EBF13 /* Assets.xcassets in Resources */,
+				AEE79C8B252BEE850078EC6C /* GoogleService-Info.plist in Resources */,
 				AE504D73247D4F17006EBF13 /* Main.storyboard in Resources */,
 				AEE79C86252B7C050078EC6C /* Sign.storyboard in Resources */,
 			);
@@ -288,22 +367,83 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AEE4B6BD2480D4CA007B1E37 /* ShellScript */ = {
+		0C0DD97D0923C4A75A4DC7A0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4745B513872D06EEE416320A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LYDAppDevPortfolioTrackerTests-checkManifestLockResult.txt",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD6B07F217133C17925408D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LYDAppDevPortfolioTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E658F8864B02CDE871D93A0D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LYDAppDevPortfolioTracker/Pods-LYDAppDevPortfolioTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -314,6 +454,7 @@
 			files = (
 				AE2D3D9C251B90FD00DAF921 /* LYDAppDevPortfolioTrackerTests.swift in Sources */,
 				AE2D3DA9251B973600DAF921 /* ProfileTest.swift in Sources */,
+				AEE79C8F252BFCE10078EC6C /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,10 +463,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE504D94247DD859006EBF13 /* ProjectViewController.swift in Sources */,
-				AE504D98247DFB0A006EBF13 /* controller.swift in Sources */,
+				AE504D98247DFB0A006EBF13 /* personController.swift in Sources */,
 				AE504D8E247DD3E2006EBF13 /* PersonInfoEditViewController.swift in Sources */,
 				AE2D3D8B25040FCF00DAF921 /* Representation.swift in Sources */,
 				AE504D89247DCBBD006EBF13 /* convenience.swift in Sources */,
+				AEE79C8E252BFCE10078EC6C /* SignInViewController.swift in Sources */,
 				AE504D81247DBFDA006EBF13 /* CoreDataStack.swift in Sources */,
 				AE504D6C247D4F17006EBF13 /* AppDelegate.swift in Sources */,
 				AE504D85247DC01A006EBF13 /* Person.xcdatamodeld in Sources */,
@@ -368,9 +510,14 @@
 /* Begin XCBuildConfiguration section */
 		AE2D3DA0251B90FD00DAF921 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41346B6A3F171357496109A6 /* Pods-LYDAppDevPortfolioTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LYDAppDevPortfolioTrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -388,9 +535,14 @@
 		};
 		AE2D3DA1251B90FD00DAF921 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07577F70D1E689B646DEE791 /* Pods-LYDAppDevPortfolioTrackerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LYDAppDevPortfolioTrackerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,7 +596,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -503,7 +655,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -522,39 +674,65 @@
 		};
 		AE504D7D247D4F18006EBF13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5273EA8DC588A0DCECD5C19F /* Pods-LYDAppDevPortfolioTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PZP836B7DJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Firebase/FirebaseAnalytics",
+					"$(PROJECT_DIR)/GoogleSignIn",
+					"$(PROJECT_DIR)",
+				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = LYDAppDevPortfolioTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.LYDAppDevPortfolioTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		AE504D7E247D4F18006EBF13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5150B8C5B3632C3051AAD284 /* Pods-LYDAppDevPortfolioTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PZP836B7DJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Firebase/FirebaseAnalytics",
+					"$(PROJECT_DIR)/GoogleSignIn",
+					"$(PROJECT_DIR)",
+				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = LYDAppDevPortfolioTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lydia.LYDAppDevPortfolioTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -594,10 +772,12 @@
 		AE504D83247DC01A006EBF13 /* Person.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AEE07C0B253573EE009B9040 /* Person 4.xcdatamodel */,
+				AE5157C9252C158200F97BB6 /* Person 3.xcdatamodel */,
 				AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */,
 				AE504D84247DC01A006EBF13 /* Person.xcdatamodel */,
 			);
-			currentVersion = AE2D3D8925040B3700DAF921 /* Person 2.xcdatamodel */;
+			currentVersion = AEE07C0B253573EE009B9040 /* Person 4.xcdatamodel */;
 			path = Person.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

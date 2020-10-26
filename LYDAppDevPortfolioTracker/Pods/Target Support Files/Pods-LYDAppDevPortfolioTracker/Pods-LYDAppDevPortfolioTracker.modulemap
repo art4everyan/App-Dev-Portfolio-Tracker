@@ -1,0 +1,6 @@
+framework module Pods_LYDAppDevPortfolioTracker {
+  umbrella header "Pods-LYDAppDevPortfolioTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

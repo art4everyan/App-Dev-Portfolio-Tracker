@@ -109,7 +109,12 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
                     self.present(alert, animated: true)
                     return
                 }
-                personController.createProject(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                if userDefault.string(forKey: "token") == "" {
+                    personController.createProject(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                } else {
+                    personController.createProjectFirebase(person: person, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                }
+                
                 dismiss(animated: true, completion: nil)
             }
         } else {
@@ -131,7 +136,12 @@ class ProjectViewController: UIViewController, UIImagePickerControllerDelegate, 
                         return
                     }
                     if let project = project {
-                        personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                        if userDefault.string(forKey: "token") == "" {
+                            personController.updateProjects(project: project, name: name, intro: introAndUpdate.text ?? "" , pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                        } else {
+                            personController.updateProjectFirebase(project: project, name: name, intro: introAndUpdate.text ?? "", pinned: pinnedSwitch.isOn, languages: languages, github: github)
+                        }
+                        
                     }
                 }
                 projectName.isUserInteractionEnabled = false

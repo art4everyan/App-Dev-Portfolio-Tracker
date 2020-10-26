@@ -8,13 +8,10 @@
 
 import Foundation
 struct PersonRepresentation: Codable {
-    var uuid: UUID
-    var username: String
-    var password: String
+    var uuid: String?
     var github: String
     var name: String
     var introduction:String?
-    var image: String?
 }
 
 struct ProjectRepresentation: Codable {
@@ -23,4 +20,5 @@ struct ProjectRepresentation: Codable {
     var introduction: String?
     var languages: String
     var pinned: Bool
+    var uuid: String
 }

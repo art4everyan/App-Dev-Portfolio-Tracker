@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="mkz-dN-x3h">
             <objects>
-                <viewController id="phz-1t-N1c" sceneMemberID="viewController">
+                <viewController id="phz-1t-N1c" customClass="SignInViewController" customModule="LYDAppDevPortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8X6-OR-rTf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,45 +18,32 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccH-Bd-mQn">
                                 <rect key="frame" x="120.5" y="188" width="173" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.36524449479999999" green="0.25106889510000002" blue="0.1708320498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgG-jQ-33E">
-                                <rect key="frame" x="100" y="321" width="214" height="50"/>
-                                <color key="backgroundColor" red="0.36524449481813481" green="0.25106889512676678" blue="0.17083204978337194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="UwV-AH-VYd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Google Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvj-dY-z29">
-                                <rect key="frame" x="100" y="431" width="214" height="50"/>
-                                <color key="backgroundColor" red="0.36524449479999999" green="0.25106889510000002" blue="0.1708320498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="100" y="336" width="214" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CTF-C1-d4T"/>
+                                    <constraint firstAttribute="height" constant="50" id="RYW-GO-HfU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Guest">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Use as a Guest">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pL2-hT-Iep" kind="show" id="7ZH-Uj-wWu"/>
+                                    <action selector="guestSign:" destination="phz-1t-N1c" eventType="touchUpInside" id="JrB-ol-vR1"/>
+                                    <segue destination="pL2-hT-Iep" kind="show" identifier="MainSegue" id="7ZH-Uj-wWu"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.92316763793438417" green="0.92356840285612507" blue="0.82931464953953637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.72073770580122321" green="0.72105059197529608" blue="0.6474645701769659" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ccH-Bd-mQn" firstAttribute="top" secondItem="5cT-Vy-0P7" secondAttribute="top" constant="100" id="BGa-F5-zXu"/>
-                            <constraint firstItem="5cT-Vy-0P7" firstAttribute="trailing" secondItem="sgG-jQ-33E" secondAttribute="trailing" constant="100" id="DfG-cp-vKS"/>
-                            <constraint firstItem="sgG-jQ-33E" firstAttribute="leading" secondItem="5cT-Vy-0P7" secondAttribute="leading" constant="100" id="McV-ug-2dj"/>
-                            <constraint firstItem="5cT-Vy-0P7" firstAttribute="trailing" secondItem="Tvj-dY-z29" secondAttribute="trailing" constant="100" id="S0k-pw-ZQe"/>
                             <constraint firstItem="ccH-Bd-mQn" firstAttribute="centerX" secondItem="8X6-OR-rTf" secondAttribute="centerX" id="XGg-9F-6Tp"/>
-                            <constraint firstItem="sgG-jQ-33E" firstAttribute="top" secondItem="ccH-Bd-mQn" secondAttribute="bottom" constant="85" id="Y2q-WF-QIJ"/>
-                            <constraint firstItem="Tvj-dY-z29" firstAttribute="top" secondItem="sgG-jQ-33E" secondAttribute="bottom" constant="60" id="goS-Le-MhI"/>
-                            <constraint firstItem="Tvj-dY-z29" firstAttribute="leading" secondItem="5cT-Vy-0P7" secondAttribute="leading" constant="100" id="nRi-qf-qX4"/>
+                            <constraint firstItem="Tvj-dY-z29" firstAttribute="leading" secondItem="5cT-Vy-0P7" secondAttribute="leading" constant="100" id="ZOG-lY-adm"/>
+                            <constraint firstItem="Tvj-dY-z29" firstAttribute="top" secondItem="ccH-Bd-mQn" secondAttribute="bottom" constant="100" id="hDM-1W-IsU"/>
+                            <constraint firstItem="5cT-Vy-0P7" firstAttribute="trailing" secondItem="Tvj-dY-z29" secondAttribute="trailing" constant="100" id="phb-oc-nFy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5cT-Vy-0P7"/>
                     </view>
@@ -66,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="868.11594202898561" y="-70.3125"/>
         </scene>
-        <!--MainSB-->
+        <!--Main-->
         <scene sceneID="JlJ-ug-OC5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="MainSB" id="pL2-hT-Iep" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="Main" id="pL2-hT-Iep" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xZe-o0-CQl"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBq-WJ-pjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

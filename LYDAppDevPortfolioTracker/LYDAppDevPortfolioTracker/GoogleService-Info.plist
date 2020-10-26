@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>780801679852-u44mc2idlv0ous8ngm19kfdvf342gjn6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.780801679852-u44mc2idlv0ous8ngm19kfdvf342gjn6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBB_HdTQqRYIS_sgDduFoPrBq4mSaMRApQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>780801679852</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lydia.LYDAppDevPortfolioTracker</string>
+	<key>PROJECT_ID</key>
+	<string>lydapp-dev-portfolio-tracker</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lydapp-dev-portfolio-tracker.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:780801679852:ios:6470b7faa5198b1e8fe0c9</string>
+	<key>DATABASE_URL</key>
+	<string>https://lydapp-dev-portfolio-tracker.firebaseio.com</string>
+</dict>
+</plist>
